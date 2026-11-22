@@ -15,8 +15,11 @@ use Illuminate\Support\Facades\Storage;
 trait BuildsStories
 {
     protected Character $figure;
+
     protected Character $fox;
+
     protected Character $rabbit;
+
     protected Background $forest;
 
     protected function makeCatalog(): void

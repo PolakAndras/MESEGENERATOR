@@ -12,8 +12,11 @@ class Character extends Model
     // Az érvényes értékek itt vannak, nem az adatbázisban (VARCHAR, nem ENUM); a Form Requestek ezeket használják (D-06).
     // Valid values live here, not in the database (VARCHAR, not ENUM); the Form Requests use them (D-06).
     public const TYPE_ANIMAL = 'animal';
+
     public const TYPE_CHILD_FIGURE = 'child_figure';
+
     public const GENDERS = ['girl', 'boy'];
+
     public const HAIR_COLORS = ['blond', 'brown', 'black', 'red'];
 
     protected $fillable = [

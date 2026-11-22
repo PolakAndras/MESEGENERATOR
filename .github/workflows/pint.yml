@@ -1,0 +1,45 @@
+# Kódstílus-ellenőrzés Laravel Pinttel (pint.json, laravel preset). Csak ellenőriz (--test), nem javít: ha hibát
+# talál, a futás piros, és a hibás fájlokat kilistázza. Javítás helyben: vendor/bin/pint
+# Code style check with Laravel Pint (pint.json, laravel preset). It only checks (--test), it never fixes: on a
+# violation the run fails and lists the files. Fix locally with: vendor/bin/pint
+name: Kódstílus (Pint)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  pint:
+    name: Pint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Kód letöltése / Checkout
+        uses: actions/checkout@v4
+
+      # A Pint a composer.lock-ban rögzített verzióval fut, így helyben és a GitHubon ugyanazt az eredményt adja.
+      # Pint runs with the version locked in composer.lock, so it gives the same result locally and on GitHub.
+      - name: PHP 8.1 / Set up PHP 8.1
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+          tools: composer:v2
+
+      - name: Composer-gyorsítótár / Composer cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.composer/cache
+          key: composer-${{ runner.os }}-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-${{ runner.os }}-
+
+      - name: Függőségek / Install dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist --no-scripts
+
+      - name: Pint ellenőrzés / Pint check
+        run: vendor/bin/pint --test -v

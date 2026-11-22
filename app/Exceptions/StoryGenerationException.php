@@ -14,6 +14,7 @@ use RuntimeException;
 class StoryGenerationException extends RuntimeException
 {
     public const INVALID_RESPONSE = 'invalid_response';
+
     public const UNAVAILABLE = 'unavailable';
 
     public string $reason;
