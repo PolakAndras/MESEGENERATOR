@@ -1,0 +1,71 @@
+# Render Blueprint (Tech Stack 10.). A titkos értékeket (sync: false) a Render felületén kell megadni.
+# Render Blueprint (Tech Stack 10.). Secret values (sync: false) are entered in the Render dashboard.
+services:
+  - type: web
+    name: mesegenerator
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: APP_NAME
+        value: Mesegenerátor
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        sync: false
+      - key: APP_URL
+        sync: false
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_DATABASE
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      # Az Aiven CA-tanúsítványa Render „Secret File”-ként: /etc/secrets/aiven-ca.pem
+      # Aiven's CA certificate as a Render "Secret File": /etc/secrets/aiven-ca.pem
+      - key: MYSQL_ATTR_SSL_CA
+        value: /etc/secrets/aiven-ca.pem
+      - key: SESSION_DRIVER
+        value: database
+      - key: SESSION_LIFETIME
+        value: "60"
+      - key: CACHE_DRIVER
+        value: database
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: MAIL_MAILER
+        value: log
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: STORY_GENERATOR
+        value: demo
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: IMAGES_DISK_DRIVER
+        value: s3
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: AWS_DEFAULT_REGION
+        value: auto
+      - key: AWS_BUCKET
+        sync: false
+      - key: AWS_ENDPOINT
+        sync: false
+      - key: AWS_URL
+        sync: false

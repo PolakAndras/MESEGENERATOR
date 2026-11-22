@@ -67,7 +67,9 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    // Budapesti idő, mert a dátumok a felületen magyar idő szerint jelennek meg (IP F1-01, CG 6.8).
+    // Budapest time, because dates are shown in Hungarian local time on the UI (IP F1-01, CG 6.8).
+    'timezone' => 'Europe/Budapest',
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +108,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'hu_HU',
 
     /*
     |--------------------------------------------------------------------------

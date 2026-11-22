@@ -12,7 +12,9 @@ class TrustProxies extends Middleware
      *
      * @var array<int, string>|string|null
      */
-    protected $proxies;
+    // A Render terheléselosztója mögött fut az alkalmazás; enélkül a Laravel http:// linkeket generálna https helyett.
+    // The app runs behind Render's load balancer; without this Laravel would generate http:// links instead of https.
+    protected $proxies = '*';
 
     /**
      * The headers that should be used to detect proxies.

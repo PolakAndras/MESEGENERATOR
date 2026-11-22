@@ -1,25 +1,13 @@
 {{--
     Fejléc (App Flow K-01, CG 6.4, mintaoldal): logó balra, menüpontok jobbra, szerepkör szerint.
     Vendég: Mese készítése · Belépés · Regisztráció. Szülő: Mese készítése · Meséim · Fiókom · Kilépés. Admin: + Admin.
-
-    ELTÉRÉS a D-12-től (a fejlesztő kérésére): a menüpontok már most megjelennek, pedig az útvonalaik még nem léteznek.
-    Ezért a link a route() helyett az App Flow 6.3 szerinti URL-re mutat, amíg az útvonal el nem készül
-    (addig 404-et ad); utána a Route::has() miatt magától a route()-ot használja.
-
     Telefonon (< 600 px) a menü a hamburger gomb mögé kerül; a nav-toggle.js nyitja és zárja.
     JS nélkül (html.no-js) a menü nyitva, listaként látszik (CG 6.4).
 
     Header (App Flow K-01, CG 6.4, sample page): logo on the left, menu items on the right, by role.
-    DEVIATION from D-12 (at the developer's request): menu items show up already although their routes do not exist yet.
-    So each link points to the App Flow 6.3 URL until the route exists (it 404s until then); afterwards Route::has()
-    makes it use route() automatically. On phones (< 600 px) the menu sits behind the hamburger button, opened and
-    closed by nav-toggle.js. Without JS (html.no-js) the menu stays open as a list (CG 6.4).
+    On phones (< 600 px) the menu sits behind the hamburger button, opened and closed by nav-toggle.js.
+    Without JS (html.no-js) the menu stays open as a list (CG 6.4).
 --}}
-@php
-    // Útvonalnév => App Flow 6.3 URI (tartalék, amíg az útvonal nem létezik)
-    // Route name => App Flow 6.3 URI (fallback until the route exists)
-    $link = fn (string $name, string $uri) => Route::has($name) ? route($name) : url($uri);
-@endphp
 
 <header class="site-header" data-nav>
     <div class="site-header__inner">
@@ -60,7 +48,7 @@
         <nav class="site-header__nav" aria-label="{{ __('common.nav.label') }}">
             <ul id="site-menu" class="site-header__menu" data-nav-menu>
                 <li>
-                    <a class="site-header__link" href="{{ $link('stories.create', '/stories/create') }}"
+                    <a class="site-header__link" href="{{ route('stories.create') }}"
                        @if (request()->routeIs('stories.create*')) aria-current="page" @endif>
                         {{ __('common.nav.create') }}
                     </a>
@@ -68,13 +56,13 @@
 
                 @guest
                     <li>
-                        <a class="site-header__link" href="{{ $link('login', '/login') }}"
+                        <a class="site-header__link" href="{{ route('login') }}"
                            @if (request()->routeIs('login')) aria-current="page" @endif>
                             {{ __('common.nav.login') }}
                         </a>
                     </li>
                     <li>
-                        <a class="site-header__link" href="{{ $link('register', '/register') }}"
+                        <a class="site-header__link" href="{{ route('register') }}"
                            @if (request()->routeIs('register')) aria-current="page" @endif>
                             {{ __('common.nav.register') }}
                         </a>
@@ -83,20 +71,20 @@
 
                 @auth
                     <li>
-                        <a class="site-header__link" href="{{ $link('stories.index', '/stories') }}"
+                        <a class="site-header__link" href="{{ route('stories.index') }}"
                            @if (request()->routeIs('stories.index', 'stories.show')) aria-current="page" @endif>
                             {{ __('common.nav.stories') }}
                         </a>
                     </li>
                     <li>
-                        <a class="site-header__link" href="{{ $link('account.show', '/account') }}"
+                        <a class="site-header__link" href="{{ route('account.show') }}"
                            @if (request()->routeIs('account.*')) aria-current="page" @endif>
                             {{ __('common.nav.account') }}
                         </a>
                     </li>
                     @if (auth()->user()->isAdmin())
                         <li>
-                            <a class="site-header__link" href="{{ $link('admin.home', '/admin') }}"
+                            <a class="site-header__link" href="{{ route('admin.home') }}"
                                @if (request()->routeIs('admin.*')) aria-current="page" @endif>
                                 {{ __('common.nav.admin') }}
                             </a>
@@ -105,7 +93,7 @@
                     <li>
                         {{-- A kilépés adatot módosít, ezért POST űrlap, nem link (App Flow 1., CG 6.4: ghost stílus)
                              Logging out changes state, so it is a POST form, not a link (App Flow 1., CG 6.4: ghost style) --}}
-                        <form method="POST" action="{{ $link('logout', '/logout') }}">
+                        <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" class="site-header__link site-header__link--button">
                                 {{ __('common.nav.logout') }}

@@ -20,6 +20,7 @@ class StoryPagePlacement extends Model
         'pos_y',
         'scale',
         'z_index',
+        'flipped',
     ];
 
     // A DECIMAL oszlopokat a PDO szövegként adja vissza; float-tá alakítva számolhatunk velük,
@@ -31,6 +32,7 @@ class StoryPagePlacement extends Model
         'pos_y' => 'float',
         'scale' => 'float',
         'z_index' => 'integer',
+        'flipped' => 'boolean',
     ];
 
     public function storyPage()

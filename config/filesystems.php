@@ -57,16 +57,24 @@ return [
         // A driver a .env-ből jön, így a kód sehol nem tudja, hol vannak valójában a képek.
         // Every image goes through this one disk (Tech Stack 4.3): a folder locally, Cloudflare R2 (s3 driver) in production.
         // The driver comes from .env, so no code needs to know where the images actually live.
-        'images' => [
-            'driver' => env('IMAGES_DISK_DRIVER', 'local'),
+        // Minden kép ezen a tárolón át (Tech Stack 4.3). Helyben mappa, élesben Cloudflare R2 (s3 driver);
+        // a root és az url környezetenként más, ezért a driver dönt (IP F1-07 döntési pontja, F5).
+        // Every image goes through this disk (Tech Stack 4.3). Locally a folder, in production Cloudflare R2
+        // (s3 driver); root and url differ per environment, so the driver decides (IP F1-07 decision point, F5).
+        'images' => env('IMAGES_DISK_DRIVER', 'local') === 's3' ? [
+            'driver' => 's3',
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'region' => env('AWS_DEFAULT_REGION', 'auto'),
+            'bucket' => env('AWS_BUCKET'),
+            'endpoint' => env('AWS_ENDPOINT'),
+            'url' => env('AWS_URL'),  // az R2 nyilvános címe (r2.dev), NY-04 / the R2 public URL (r2.dev), NY-04
+            'use_path_style_endpoint' => true,
+        ] : [
+            'driver' => 'local',
             'root' => storage_path('app/public/images'),
             'url' => env('APP_URL').'/storage/images',
             'visibility' => 'public',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
-            'endpoint' => env('AWS_ENDPOINT'),
         ],
 
     ],

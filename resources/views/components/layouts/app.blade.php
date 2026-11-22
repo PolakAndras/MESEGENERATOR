@@ -9,7 +9,7 @@
     A story.css csak a vásznat vagy olvasót tartalmazó oldalakon töltődik be (CG 11.1): :story="true".
     story.css only loads on pages with a canvas or reader (CG 11.1): :story="true".
 --}}
-@props(['title' => null, 'story' => false])
+@props(['title' => null, 'story' => false, 'admin' => false])
 
 <!DOCTYPE html>
 <html lang="hu" class="no-js" data-theme="day">
@@ -39,8 +39,14 @@
     @if ($story)
         <link rel="stylesheet" href="{{ asset('css/story.css') }}">
     @endif
+    @if ($admin)
+        <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    @endif
     <script type="module" src="{{ asset('js/nav-toggle.js') }}"></script>
     <script type="module" src="{{ asset('js/app-theme.js') }}"></script>
+    <script type="module" src="{{ asset('js/confirm.js') }}"></script>
+    {{-- Oldalankénti modulok (pl. szerkesztő, olvasó) @push('scripts')-szel. / Per-page modules via @push('scripts'). --}}
+    @stack('scripts')
 </head>
 <body class="app-layout">
     @include('includes.navbar')

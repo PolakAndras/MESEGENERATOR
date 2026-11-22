@@ -38,3 +38,317 @@
     border-radius: var(--radius-lg);
   }
 }
+
+/* Tükrözött figura (PRD US-22): a talppont ugyanott marad, csak a kép fordul meg vízszintesen.
+   Flipped figure (PRD US-22): the foot point stays put, only the image is mirrored horizontally. */
+.story-canvas__figure--flipped {
+  transform: translate(-50%, -100%) scaleX(-1);
+}
+
+/* Szerkesztő mód: húzás közben az oldal nem görget (touch-action: none, US-06 AC2); a figura megfogható (CG 6.10)
+   Edit mode: the page does not scroll while dragging (touch-action: none, US-06 AC2); figures are grabbable (CG 6.10) */
+.story-canvas--draggable {
+  touch-action: none;
+}
+
+.story-canvas__figure--draggable {
+  cursor: grab;
+  user-select: none;
+}
+
+.story-canvas__figure--dragging {
+  cursor: grabbing;
+  outline: 2px dashed var(--app-focus);
+  outline-offset: 2px;
+}
+
+/* ---------- story-reader (K-07, CG 7.1) ---------- */
+
+/* A mese világa a téma tokenjeivel (esti / nappali); a fejléc és a lábléc app-világú marad (CG 2.)
+   The story world uses the theme tokens (night / day); header and footer stay in the app world (CG 2.) */
+.story-reader {
+  padding-block: var(--space-3) var(--space-6);
+  background: var(--story-bg);
+  color: var(--story-ink);
+}
+
+.story-reader__sheet {
+  max-inline-size: var(--width-reader);
+  margin-inline: auto;
+  padding: var(--space-3) var(--gutter);
+  background: var(--story-paper);
+}
+
+.story-reader__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-block-end: var(--space-4);
+}
+
+.story-reader__title {
+  margin: 0;
+  font-family: var(--font-story-title);
+  font-size: var(--story-fs-title);
+  font-weight: 600;
+  font-variation-settings: "SOFT" 100;
+  line-height: 1.25;
+}
+
+.story-reader__kicker {
+  margin: 0;
+  color: var(--story-muted);
+  font-size: var(--story-fs-meta);
+  line-height: 2.75rem;
+}
+
+/* Címoldal (CG 7.2): középre igazított cím, főszereplő, teljes AI-mondat
+   Title page (CG 7.2): centred title, main character, full AI sentence */
+.story-reader__cover {
+  margin-block-end: var(--space-5);
+  text-align: center;
+}
+
+.story-reader__cover-title {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-story-title);
+  font-size: var(--story-fs-cover-title);
+  font-weight: 600;
+  font-variation-settings: "SOFT" 100;
+  line-height: 1.15;
+}
+
+.story-reader__byline {
+  margin-block-end: var(--space-2);
+  color: var(--story-muted);
+  font-family: var(--font-story);
+}
+
+.story-reader__canvas {
+  background: var(--story-canvas-placeholder);
+}
+
+.story-reader__text {
+  max-inline-size: 65ch;
+  margin: var(--space-4) 0 var(--space-2);
+  font-family: var(--font-story);
+  font-optical-sizing: auto;
+  font-size: var(--story-fs-text);
+  line-height: 1.6;
+}
+
+/* Lapozó: Előző balra, oldalszám középen, Következő jobbra, felül elválasztó (CG 7.1)
+   Pager: Previous left, page number centred, Next right, a divider on top (CG 7.1) */
+.story-reader__pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-block-start: var(--space-5);
+  padding-block-start: var(--space-4);
+  border-block-start: var(--border-width) solid var(--story-line);
+}
+
+.story-reader__page-number {
+  color: var(--story-muted);
+  font-size: var(--story-fs-meta);
+}
+
+.story-reader__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  max-inline-size: var(--width-reader);
+  margin: var(--space-5) auto 0;
+  padding-inline: var(--gutter);
+}
+
+.story-reader__saved {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  font-weight: 600;
+}
+
+/* A vendég tájékoztató doboza esti módban is világos marad, hogy kiemelkedjen (CG 6.5)
+   The guest info box stays light in night mode too, so it stands out (CG 6.5) */
+.story-reader__guest {
+  inline-size: 100%;
+  text-align: start;
+}
+
+@media (min-width: 600px) {
+  .story-reader {
+    padding-block: var(--space-6);
+  }
+
+  .story-reader__sheet {
+    padding: var(--space-5) var(--space-6);
+    border: var(--border-width) solid var(--story-line);
+    border-radius: var(--radius-lg);
+  }
+}
+
+/* ---------- story-button: az olvasó gombjai story-tokenekkel (CG 6.2) ---------- */
+
+.story-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-inline-size: 2.75rem;
+  min-block-size: 2.75rem;
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-width) solid var(--story-control-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--story-ink);
+  font-family: var(--font-app);
+  font-size: var(--app-fs-button);
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.story-button:hover {
+  color: var(--story-ink);
+  border-color: var(--story-ink);
+}
+
+.story-button--primary {
+  border-color: var(--story-accent);
+  background: var(--story-accent);
+  color: var(--story-on-accent);
+}
+
+.story-button--primary:hover {
+  border-color: var(--story-accent);
+  color: var(--story-on-accent);
+}
+
+/* Inaktív lapozógomb: félátlátszóság helyett muted szín és szaggatott keret (CG 7.1)
+   Inactive pager button: muted colour and a dashed border instead of transparency (CG 7.1) */
+.story-button[aria-disabled="true"] {
+  border-style: dashed;
+  border-color: var(--story-control-border);
+  background: transparent;
+  color: var(--story-muted);
+  cursor: default;
+}
+
+.story-button:disabled {
+  border-style: dashed;
+  color: var(--story-muted);
+  cursor: not-allowed;
+}
+
+.story-button:focus-visible {
+  box-shadow: 0 0 0 3px var(--story-focus);
+}
+
+/* Telefonon az „Előző” és „Következő” csak nyíl, a felirat képernyőolvasónak megmarad (CG 7.1)
+   On phones "Previous" and "Next" are just arrows; the label stays for screen readers (CG 7.1) */
+.story-reader__pager .story-button__label {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (min-width: 600px) {
+  .story-reader__pager .story-button__label {
+    position: static;
+    inline-size: auto;
+    block-size: auto;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+/* ---------- ai-badge (CG 7.3) ---------- */
+
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  color: var(--story-muted);
+}
+
+.ai-badge--full {
+  font-family: var(--font-app);
+  font-size: var(--app-fs-small);
+}
+
+.ai-badge--compact {
+  font-family: var(--font-app);
+  font-size: var(--story-fs-meta);
+}
+
+/* ---------- theme-toggle (CG 7.4) ---------- */
+
+/* Mindig a KÖVETKEZŐ állapot: esti módban „Nappali mód”, nappaliban „Esti mód”; JS nélkül rejtett
+   Always the NEXT state: "Day mode" at night, "Night mode" by day; hidden without JS */
+.theme-toggle {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 2.75rem;
+  min-block-size: 2.75rem;
+  padding: 0 var(--space-3);
+  border: var(--border-width) solid var(--story-control-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--story-ink);
+  font-family: var(--font-app);
+  font-size: var(--app-fs-button);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.no-js .theme-toggle {
+  display: none;
+}
+
+.theme-toggle:focus-visible {
+  box-shadow: 0 0 0 3px var(--story-focus);
+}
+
+.theme-toggle__to-day,
+.theme-toggle__to-night {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+[data-story-theme="night"] .theme-toggle__to-night,
+[data-story-theme="day"] .theme-toggle__to-day {
+  display: none;
+}
+
+.theme-toggle__label {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (min-width: 600px) {
+  .theme-toggle__label {
+    position: static;
+    inline-size: auto;
+    block-size: auto;
+    overflow: visible;
+    clip: auto;
+  }
+}

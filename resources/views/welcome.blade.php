@@ -4,13 +4,10 @@
     A vászon háttere a témát követi: nappal napos rét, este holdas erdő – ez az oldal egyetlen „hangos” eleme,
     minden más visszafogott.
 
-    A gomb az App Flow 6.3 szerinti URL-re mutat, amíg a stories.create útvonal el nem készül (F2);
-    addig 404-et ad (eltérés a D-12-től, a fejlesztő kérésére).
-
     Home page (App Flow S-01, CG 6.9) – "storybook cover": the heading in the story typeface (Fraunces) with the
     intro and the "Create story" button, the decorative canvas beside it (below on phones), then the three steps.
     The canvas background follows the theme: sunny meadow by day, moonlit forest by night – the one "loud" element
-    on the page; everything else stays quiet. The button points to the App Flow 6.3 URL until stories.create exists.
+    on the page; everything else stays quiet.
 --}}
 <x-layouts.app :story="true">
     <div class="app-layout__content home">
@@ -18,8 +15,7 @@
             <div class="home__intro">
                 <h1 class="home__title">{{ __('home.title') }}</h1>
                 <p class="home__lead">{{ __('home.lead') }}</p>
-                <x-button variant="primary"
-                          href="{{ Route::has('stories.create') ? route('stories.create') : url('/stories/create') }}">
+                <x-button variant="primary" :href="route('stories.create')">
                     <x-icon name="sparkles" />
                     {{ __('home.cta') }}
                 </x-button>

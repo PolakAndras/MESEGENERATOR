@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/';
 
     /**
      * The controller namespace for the application.
@@ -58,6 +58,13 @@ class RouteServiceProvider extends ServiceProvider
     {
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
+        });
+
+        // Belépési próbálkozások: kisbetűs e-mail + IP szerint (Backend Schema 10.6); túllépéskor 429 → E-429.
+        // Login attempts keyed by lower-cased email + IP (Backend Schema 10.6); exceeding it gives 429 → E-429.
+        RateLimiter::for('login', function (Request $request) {
+            return Limit::perMinute(config('story.rate_limits.login_attempts_per_minute'))
+                ->by(mb_strtolower((string) $request->input('email')).'|'.$request->ip());
         });
     }
 }

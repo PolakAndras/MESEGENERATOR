@@ -1,0 +1,118 @@
+/*
+ * Admin felület (App Flow K-09, CG 11.1): csak az admin elrendezés tölti be.
+ * Admin area (App Flow K-09, CG 11.1): only loaded by the admin layout.
+ */
+
+/* ---------- admin-layout (K-09) ---------- */
+
+.admin-layout__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block-end: var(--space-5);
+  padding-block-end: var(--space-3);
+  border-block-end: var(--border-width) solid var(--app-border);
+}
+
+.admin-layout__link {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  color: var(--app-text);
+  font-size: var(--app-fs-label);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.admin-layout__link:hover {
+  background: var(--app-primary-soft);
+  color: var(--app-text);
+}
+
+.admin-layout__link[aria-current="page"] {
+  background: var(--app-primary);
+  color: var(--app-on-primary);
+}
+
+/* ---------- action-grid: cselekvéskártyák (S-22) / action cards ---------- */
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.action-card {
+  display: grid;
+  gap: var(--space-2);
+  align-content: start;
+  padding: var(--space-3);
+  border: var(--border-width) solid var(--app-border);
+  border-radius: var(--radius-lg);
+  background: var(--app-surface);
+}
+
+.action-card--default {
+  border: var(--border-width-strong) solid var(--app-primary);
+}
+
+/* A cselekvéskép talppontja alul középen van, ezért alulra igazítva, halvány háttéren (CG 8.3)
+   The action image's foot point is bottom-centre, so it sits on the bottom, on a soft backdrop (CG 8.3) */
+.action-card__image {
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: bottom;
+  border-radius: var(--radius-md);
+  background: var(--app-bg);
+}
+
+.action-card__name {
+  margin: 0;
+  font-weight: 600;
+}
+
+.action-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ---------- current-image (S-24, S-27) ---------- */
+
+.current-image {
+  margin: 0;
+}
+
+.current-image__img {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 20rem;
+  block-size: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background: var(--app-bg);
+}
+
+.current-image__img--square {
+  max-inline-size: 12rem;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.current-image__caption {
+  margin-block-start: var(--space-1);
+  color: var(--app-text-muted);
+  font-size: var(--app-fs-small);
+}
+
+.section {
+  margin-block-start: var(--space-7);
+}
