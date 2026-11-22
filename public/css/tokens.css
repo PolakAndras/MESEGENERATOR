@@ -1,0 +1,174 @@
+/*
+ * Dizájntokenek – minden szín, betű, méret és térköz egyetlen helyen (Content Guidelines 3–5.).
+ * A komponensek csak ezekre a változókra hivatkoznak, így egy érték módosítása egy sorban történik.
+ * Mobil-első: az alapérték a telefoné, a tablet és az asztali értékek média-lekérdezésben írják felül.
+ *
+ * Design tokens – every colour, font, size and spacing in one place (Content Guidelines ch. 3–5).
+ * Components only reference these variables, so changing a value is a one-line edit.
+ * Mobile-first: base values are for phones, tablet/desktop values override them in media queries.
+ */
+
+:root {
+  /* Szülői felület színei – CG 3.2. ELTÉRÉS: az --app-bg a fejlesztő kérésére barátságosabb, halvány rétzöld
+     (#F5F7F9 helyett); kontraszt rajta: text 13,21 · muted 4,94 · primary 5,44.
+     App colours – CG 3.2. DEVIATION: --app-bg is a friendlier pale meadow green at the developer's request
+     (instead of #F5F7F9); contrast on it: text 13.21 · muted 4.94 · primary 5.44. */
+  --app-bg: #EEF5F1;
+  --app-surface: #FFFFFF;
+  --app-text: #1E293B;
+  --app-text-muted: #5B6B7C;
+  --app-border: #DCE2E8;
+  --app-border-strong: #7F8C9A;
+  --app-primary: #1F6F5C;
+  --app-primary-hover: #185A4A;
+  --app-primary-soft: #E3F1EC;
+  --app-on-primary: #FFFFFF;
+  --app-focus: #2B6CB0;
+  --app-danger: #B3261E;
+  --app-danger-soft: #FCEDEC;
+  --app-success: #2E6B30;
+  --app-success-soft: #E8F3E8;
+  --app-warning: #7A4F00;
+  --app-warning-soft: #FFF4DB;
+  --app-info: #285E8E;
+  --app-info-soft: #E7F0F8;
+  --app-overlay: rgba(28, 32, 51, 0.85);
+
+  /* Betűcsaládok – CG 4.2; a tartalék betűk addig látszanak, amíg a saját betűfájlok (F1-02) nincsenek meg
+     Font families – CG 4.2; the fallbacks show until the self-hosted font files (F1-02) exist */
+  --font-app: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-story: "Literata", Georgia, "Times New Roman", serif;
+  --font-story-title: "Fraunces", "Literata", Georgia, serif;
+
+  /* Betűméretek, telefon – CG 4.4 / Font sizes, phone – CG 4.4 */
+  --app-fs-h1: 1.5rem;
+  --app-fs-h2: 1.25rem;
+  --app-fs-h3: 1.125rem;
+  --app-fs-body: 1rem;
+  --app-fs-label: 0.9375rem;
+  --app-fs-button: 0.9375rem;
+  --app-fs-small: 0.875rem;
+  --app-fs-caption: 0.8125rem;
+
+  --story-fs-text: 1.1875rem;
+  --story-fs-title: 1.25rem;
+  --story-fs-cover-title: 1.75rem;
+  --story-fs-meta: 0.75rem;
+
+  /* Térközskála – CG 5.2 / Spacing scale – CG 5.2 */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* Oldalmargó és tartalomszélességek – CG 5.3 / Side gutter and content widths – CG 5.3 */
+  --gutter: var(--space-4);
+  --width-form: 36rem;
+  --width-content: 64rem;
+  --width-editor: 72rem;
+  --width-reader: 47.5rem;
+
+  /* Lekerekítés, keret, fókusz – CG 5.4 / Radius, border, focus – CG 5.4 */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+  --border-width: 1px;
+  --border-width-strong: 1.5px;
+  --focus-ring: 0 0 0 3px var(--app-focus);
+}
+
+/* Tablet (600 px-től) – a töréspont szó szerint szerepel, mert CSS-változó média-lekérdezésben nem használható (CG 5.1)
+   Tablet (from 600 px) – the breakpoint is literal because CSS variables cannot be used in media queries (CG 5.1) */
+@media (min-width: 600px) {
+  :root {
+    --app-fs-h1: 1.625rem;
+
+    --story-fs-text: 1.25rem;
+    --story-fs-title: 1.5rem;
+    --story-fs-cover-title: 2.25rem;
+
+    --gutter: var(--space-5);
+  }
+}
+
+/* Asztali (1024 px-től) / Desktop (from 1024 px) */
+@media (min-width: 1024px) {
+  :root {
+    --app-fs-h1: 1.75rem;
+    --app-fs-h2: 1.375rem;
+
+    --story-fs-text: 1.3125rem;
+    --story-fs-title: 1.625rem;
+    --story-fs-cover-title: 2.75rem;
+
+    --gutter: var(--space-6);
+  }
+}
+
+/*
+ * Szülői felület – esti mód. ELTÉRÉS a CG 2. pontjától („csak világos”), a fejlesztő kérésére.
+ * A színek a CG 3.3 jóváhagyott esti mesepalettájából jönnek (mélykék, holdarany), így a két világ egy családba tartozik.
+ * A <html data-theme="night"> kapcsolja be; a komponensek csak tokeneket használnak, ezért külön szabály nem kell nekik.
+ * Az üzenetdobozok (success/info/warning/danger) színe szándékosan változatlan: esti módban is világosak (CG 6.5).
+ * Kontraszt: text/bg 12,76 · text/surface 11,08 · muted/surface 5,52 · arany link/surface 7,70 ·
+ * on-primary/arany 7,70 · border-strong/surface 3,81 · arany/primary-soft 6,36.
+ *
+ * App UI – night mode. DEVIATION from CG ch. 2 ("light only"), at the developer's request.
+ * Colours come from the approved CG 3.3 night story palette (deep blue, moon gold), so both worlds feel like one family.
+ * Turned on by <html data-theme="night">; components only use tokens, so they need no extra rules.
+ * Message box colours stay unchanged on purpose: they remain light in night mode too (CG 6.5).
+ */
+[data-theme="night"] {
+  --app-bg: #1C2033;
+  --app-surface: #262B40;
+  --app-text: #EDE4D3;
+  --app-text-muted: #A9A296;
+  --app-border: #3A4058;
+  --app-border-strong: #7A869C;
+  --app-primary: #E9B872;
+  --app-primary-hover: #F2CD95;
+  --app-primary-soft: #33384F;
+  --app-on-primary: #262B40;
+  --app-focus: #E9B872;
+}
+
+/*
+ * Mese – esti téma (alapértelmezett). A téma az olvasó gyökérelemén van, nem a <html>-en,
+ * így csak a mese világára hat (CG 3.5). A fókuszkeret itt a story-színt kapja (CG 5.4).
+ *
+ * Story – night theme (default). The theme sits on the reader's root element, not on <html>,
+ * so it only affects the story world (CG 3.5). The focus ring uses the story colour here (CG 5.4).
+ */
+[data-story-theme="night"] {
+  --story-bg: #1C2033;
+  --story-paper: #262B40;
+  --story-ink: #EDE4D3;
+  --story-muted: #A9A296;
+  --story-accent: #E9B872;
+  --story-on-accent: #262B40;
+  --story-line: #3A4058;
+  --story-control-border: #7A869C;
+  --story-focus: #E9B872;
+  --story-canvas-placeholder: #30364F;
+  --focus-ring: 0 0 0 3px var(--story-focus);
+}
+
+/* Mese – nappali téma (CG 3.4) / Story – day theme (CG 3.4) */
+[data-story-theme="day"] {
+  --story-bg: #F3EBDC;
+  --story-paper: #FBF6EC;
+  --story-ink: #3B2F2A;
+  --story-muted: #6E6656;
+  --story-accent: #A84F2A;
+  --story-on-accent: #FBF6EC;
+  --story-line: #E2D6C2;
+  --story-control-border: #8A7B6A;
+  --story-focus: #A84F2A;
+  --story-canvas-placeholder: #E9DFCB;
+  --focus-ring: 0 0 0 3px var(--story-focus);
+}

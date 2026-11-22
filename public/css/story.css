@@ -1,0 +1,40 @@
+/*
+ * A mese világa: vászon (K-06) – Tech Stack 6.1, CG 7–8. Csak a vásznat vagy olvasót tartalmazó oldalakon töltődik be (CG 11.1).
+ * Story world: canvas (K-06) – Tech Stack 6.1, CG ch. 7–8. Only loaded on pages with a canvas or reader (CG 11.1).
+ */
+
+/* ---------- story-canvas (K-06) ---------- */
+
+/* 4:3-as <div>, nem <canvas> (Tech Stack D-14). A háttér kitölti, a figurák százalékos koordinátán állnak,
+   így bármilyen szélességen arányosan méreteződik (NFR-02, NFR-03).
+   A 4:3 <div>, not a <canvas> (Tech Stack D-14). The background fills it, figures stand at percentage
+   coordinates, so it scales proportionally at any width (NFR-02, NFR-03). */
+.story-canvas {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--story-canvas-placeholder, var(--app-border));
+}
+
+.story-canvas__bg {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+/* A translate miatt a left/top a figura alsó közepe (talppont, CG 8.3); a left, top, height, z-index inline (CG 3.6)
+   Because of translate, left/top is the figure's bottom centre (foot point, CG 8.3); left, top, height, z-index are inline (CG 3.6) */
+.story-canvas__figure {
+  position: absolute;
+  inline-size: auto;
+  transform: translate(-50%, -100%);
+}
+
+@media (min-width: 600px) {
+  .story-canvas {
+    border-radius: var(--radius-lg);
+  }
+}

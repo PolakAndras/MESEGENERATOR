@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Kutya – áll · M méretosztály: 520 px magas, talppont alul középen -->
+  <rect x="300" y="660" width="42" height="140" rx="18" fill="#A47B50"/>
+  <rect x="500" y="660" width="42" height="140" rx="18" fill="#A47B50"/>
+  <ellipse cx="200" cy="520" rx="22" ry="70" fill="#C99A6B" transform="rotate(-30 200 520)"/>
+  <ellipse cx="380" cy="610" rx="175" ry="90" fill="#C99A6B"/>
+  <rect x="245" y="665" width="42" height="135" rx="18" fill="#C99A6B"/>
+  <rect x="445" y="665" width="42" height="135" rx="18" fill="#C99A6B"/>
+  <circle cx="555" cy="380" r="95" fill="#C99A6B"/>
+  <ellipse cx="500" cy="380" rx="34" ry="70" fill="#A47B50" transform="rotate(15 500 380)"/>
+  <ellipse cx="625" cy="410" rx="50" ry="38" fill="#E6CBA8"/>
+  <circle cx="665" cy="395" r="13" fill="#2A1E17"/>
+  <circle cx="590" cy="355" r="11" fill="#2A1E17"/>
+</svg>

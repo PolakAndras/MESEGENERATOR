@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Szarvas – áll · L méretosztály: 680 px magas, talppont alul középen -->
+  <rect x="290" y="560" width="40" height="240" rx="18" fill="#8E6340"/>
+  <rect x="530" y="560" width="40" height="240" rx="18" fill="#8E6340"/>
+  <ellipse cx="190" cy="430" rx="28" ry="20" fill="#E3C9A3"/>
+  <ellipse cx="390" cy="500" rx="210" ry="110" fill="#B9865A"/>
+  <ellipse cx="390" cy="560" rx="150" ry="45" fill="#E3C9A3"/>
+  <rect x="230" y="570" width="40" height="230" rx="18" fill="#B9865A"/>
+  <rect x="470" y="570" width="40" height="230" rx="18" fill="#B9865A"/>
+  <rect x="515" y="290" width="80" height="230" rx="40" fill="#B9865A"/>
+  <rect x="566" y="140" width="16" height="120" rx="8" fill="#8E6340"/>
+  <rect x="566" y="160" width="58" height="16" rx="8" fill="#8E6340"/>
+  <rect x="604" y="120" width="16" height="130" rx="8" fill="#8E6340"/>
+  <rect x="604" y="146" width="52" height="16" rx="8" fill="#8E6340"/>
+  <ellipse cx="535" cy="238" rx="38" ry="18" fill="#8E6340"/>
+  <ellipse cx="590" cy="290" rx="72" ry="56" fill="#B9865A"/>
+  <ellipse cx="648" cy="308" rx="32" ry="26" fill="#E3C9A3"/>
+  <circle cx="670" cy="300" r="10" fill="#2A1E17"/>
+  <circle cx="612" cy="278" r="10" fill="#2A1E17"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Nyúl – áll · S méretosztály: 360 px magas, talppont alul középen -->
+  <circle cx="275" cy="690" r="36" fill="#F3EFE8"/>
+  <ellipse cx="380" cy="700" rx="120" ry="95" fill="#C9C3B8"/>
+  <ellipse cx="420" cy="780" rx="60" ry="20" fill="#A8A196"/>
+  <ellipse cx="320" cy="782" rx="50" ry="18" fill="#A8A196"/>
+  <ellipse cx="455" cy="502" rx="22" ry="58" fill="#A8A196" transform="rotate(-10 455 502)"/>
+  <ellipse cx="500" cy="500" rx="22" ry="58" fill="#C9C3B8" transform="rotate(12 500 500)"/>
+  <circle cx="480" cy="590" r="68" fill="#C9C3B8"/>
+  <ellipse cx="535" cy="612" rx="22" ry="18" fill="#F3EFE8"/>
+  <circle cx="552" cy="604" r="8" fill="#2A1E17"/>
+  <circle cx="505" cy="575" r="9" fill="#2A1E17"/>
+</svg>

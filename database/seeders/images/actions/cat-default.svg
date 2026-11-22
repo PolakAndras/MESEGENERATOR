@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Macska – áll · S méretosztály: 360 px magas, talppont alul középen -->
+  <rect x="310" y="700" width="28" height="100" rx="13" fill="#6E737D"/>
+  <rect x="460" y="700" width="28" height="100" rx="13" fill="#6E737D"/>
+  <ellipse cx="225" cy="610" rx="18" ry="70" fill="#8A8F99" transform="rotate(-25 225 610)"/>
+  <ellipse cx="380" cy="680" rx="135" ry="62" fill="#8A8F99"/>
+  <rect x="270" y="705" width="28" height="95" rx="13" fill="#8A8F99"/>
+  <rect x="420" y="705" width="28" height="95" rx="13" fill="#8A8F99"/>
+  <path d="M475 560 Q478 470 490 440 Q520 480 530 545 Z" fill="#6E737D"/>
+  <path d="M530 545 Q545 470 560 445 Q580 490 580 560 Z" fill="#6E737D"/>
+  <circle cx="525" cy="590" r="65" fill="#8A8F99"/>
+  <ellipse cx="572" cy="610" rx="24" ry="18" fill="#B6BAC2"/>
+  <circle cx="588" cy="600" r="7" fill="#2A1E17"/>
+  <circle cx="548" cy="575" r="9" fill="#2A1E17"/>
+</svg>

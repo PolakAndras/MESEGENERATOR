@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
+  <!-- Éjszakai erdő · 4:3, talajsáv: 936–1200 px (78–100%) -->
+  <rect width="1600" height="1200" fill="#2B3A67"/>
+  <rect y="560" width="1600" height="380" fill="#24325A"/>
+  <circle cx="1330" cy="190" r="80" fill="#EDE4D3"/>
+  <circle cx="1362" cy="170" r="72" fill="#2B3A67"/>
+  <circle cx="320" cy="120" r="6" fill="#EDE4D3"/>
+  <circle cx="560" cy="210" r="5" fill="#EDE4D3"/>
+  <circle cx="820" cy="100" r="6" fill="#EDE4D3"/>
+  <circle cx="1040" cy="240" r="5" fill="#EDE4D3"/>
+  <circle cx="700" cy="330" r="4" fill="#EDE4D3"/>
+  <circle cx="1180" cy="80" r="4" fill="#EDE4D3"/>
+  <!-- Fák a széleken, hogy a középső rész a figuráké maradjon / trees at the edges keep the middle free for figures -->
+  <rect x="95" y="620" width="50" height="330" rx="20" fill="#1B3830"/>
+  <path d="M120 250 Q230 520 250 700 Q120 740 -10 700 Q10 520 120 250 Z" fill="#24493D"/>
+  <rect x="1460" y="600" width="54" height="350" rx="22" fill="#1B3830"/>
+  <path d="M1487 220 Q1610 500 1630 690 Q1487 735 1345 690 Q1365 500 1487 220 Z" fill="#24493D"/>
+  <path d="M220 520 Q290 700 300 820 Q220 850 140 820 Q150 700 220 520 Z" fill="#1B3830"/>
+  <path d="M1380 500 Q1450 690 1460 820 Q1380 850 1300 820 Q1310 690 1380 500 Z" fill="#1B3830"/>
+  <rect y="936" width="1600" height="264" fill="#2F5641"/>
+  <rect y="936" width="1600" height="24" fill="#3E6E52"/>
+</svg>

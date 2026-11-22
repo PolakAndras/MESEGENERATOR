@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
+  <!-- Esti hálószoba · 4:3, padló (talajsáv): 936–1200 px (78–100%) -->
+  <rect width="1600" height="1200" fill="#5E5470"/>
+  <rect y="880" width="1600" height="56" fill="#4E465E"/>
+  <!-- Ablak a bal szélen, esti éggel / window at the left edge with an evening sky -->
+  <rect x="70" y="180" width="300" height="380" rx="16" fill="#8A6A4F"/>
+  <rect x="94" y="204" width="252" height="332" rx="8" fill="#2B3A67"/>
+  <circle cx="280" cy="280" r="40" fill="#EDE4D3"/>
+  <circle cx="300" cy="266" r="36" fill="#2B3A67"/>
+  <circle cx="150" cy="300" r="5" fill="#EDE4D3"/>
+  <circle cx="200" cy="420" r="4" fill="#EDE4D3"/>
+  <rect x="210" y="204" width="20" height="332" fill="#8A6A4F"/>
+  <!-- Ágy a jobb szélen / bed at the right edge -->
+  <rect x="1380" y="560" width="40" height="390" rx="16" fill="#6E523D"/>
+  <rect x="1360" y="760" width="260" height="140" rx="30" fill="#E3D6C2"/>
+  <rect x="1440" y="700" width="180" height="80" rx="40" fill="#F4EEE4"/>
+  <rect x="1360" y="830" width="260" height="110" rx="20" fill="#7E9CC0"/>
+  <!-- Kép a falon, kicsi és halvány / small, muted picture on the wall -->
+  <rect x="740" y="200" width="120" height="90" rx="10" fill="#6E6383"/>
+  <rect y="936" width="1600" height="264" fill="#8A6A4F"/>
+  <rect y="936" width="1600" height="20" fill="#A07D5E"/>
+  <ellipse cx="800" cy="1090" rx="420" ry="60" fill="#9C7A5C"/>
+</svg>

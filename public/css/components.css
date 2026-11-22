@@ -1,0 +1,548 @@
+/*
+ * Komponensek – BEM-blokkok, csak tokenekkel (CG 6., 11.1).
+ * Components – BEM blocks, tokens only (CG ch. 6, 11.1).
+ */
+
+/* ---------- icon (CG 8.7) ---------- */
+
+/* Az ikon a szöveg méretéhez és színéhez igazodik (1.25em, currentColor), így minden komponensben illeszkedik
+   The icon follows the text size and colour (1.25em, currentColor), so it fits in every component */
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  inline-size: 1.25em;
+  block-size: 1.25em;
+}
+
+/* ---------- app-layout (CG 5.3) ---------- */
+
+/* A lábléc rövid oldalon is az ablak aljára kerül: a fő tartalom tölti ki a maradék helyet
+   The footer stays at the bottom even on short pages: main fills the remaining space */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+}
+
+.app-layout__main {
+  flex: 1;
+}
+
+/* Tartalomszélesség: középre igazítva, max. --width-content, oldalt --gutter (CG 5.3)
+   Content width: centred, max --width-content, --gutter on the sides (CG 5.3) */
+.app-layout__content {
+  max-inline-size: var(--width-content);
+  margin-inline: auto;
+  padding: var(--space-6) var(--gutter) var(--space-7);
+}
+
+/* Az üzenetsáv a fejléc alatt, a tartalomszélességen belül (CG 6.5)
+   The message bar sits under the header, within the content width (CG 6.5) */
+.app-layout__flash {
+  max-inline-size: var(--width-content);
+  margin-inline: auto;
+  padding: var(--space-4) var(--gutter) 0;
+}
+
+/* ---------- site-header (K-01, CG 6.4) ---------- */
+
+.site-header {
+  background: var(--app-surface);
+  border-block-end: var(--border-width) solid var(--app-border);
+}
+
+/* Telefonon: logó | témaváltó + hamburger; a lenyitott menü új sorba törik a teljes szélességen.
+   Tablettől: logó | menü | témaváltó egy sorban.
+   On phones: logo | theme switch + hamburger; the opened menu wraps onto a full-width new row.
+   From tablet up: logo | menu | theme switch in one row. */
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: var(--space-4);
+  max-inline-size: var(--width-content);
+  min-block-size: 3.5rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Logó: ikon + név, Nunito 700, 18 px, elsődleges szín; 44 px magas az érintési célterület miatt (CG 5.5)
+   Logo: icon + name, Nunito 700, 18 px, primary colour; 44 px tall for the touch target (CG 5.5) */
+.site-header__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: 2.75rem;
+  color: var(--app-primary);
+  font-size: var(--app-fs-h3);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-header__logo:hover {
+  color: var(--app-primary-hover);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Témaváltó: másodlagos gomb stílusa (CG 7.4 mintája); telefonon 44×44 px-es ikon gomb
+   Theme switch: secondary button style (CG 7.4 pattern); a 44×44 px icon button on phones */
+.site-header__theme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 2.75rem;
+  min-block-size: 2.75rem;
+  padding: 0 var(--space-3);
+  border: var(--border-width) solid var(--app-border-strong);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--app-text);
+  font-family: inherit;
+  font-size: var(--app-fs-button);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.site-header__theme:hover {
+  background: var(--app-primary-soft);
+}
+
+.no-js .site-header__theme {
+  display: none;
+}
+
+/* Mindig a KÖVETKEZŐ állapot felirata látszik: nappal „Esti mód”, este „Nappali mód” (CG 7.4)
+   The label always names the NEXT state: "Night mode" by day, "Day mode" by night (CG 7.4) */
+.site-header__theme-to-night,
+.site-header__theme-to-day {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.site-header__theme-to-day,
+[data-theme="night"] .site-header__theme-to-night {
+  display: none;
+}
+
+[data-theme="night"] .site-header__theme-to-day {
+  display: inline-flex;
+}
+
+/* Telefonon a felirat csak képernyőolvasónak (mint a .sr-only), hogy elférjen a logó mellett
+   On phones the label is for screen readers only (like .sr-only), so it fits next to the logo */
+.site-header__theme-label {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* Hamburger gomb: 44×44 px (CG 5.5); csak telefonon és csak JS mellett látszik
+   Hamburger button: 44×44 px (CG 5.5); shown only on phones and only with JS */
+.site-header__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--app-text);
+  font-size: var(--app-fs-h2);
+  cursor: pointer;
+}
+
+.no-js .site-header__toggle {
+  display: none;
+}
+
+/* Az aria-expanded dönti el, melyik ikon látszik: csukva menü, nyitva X
+   aria-expanded decides which icon shows: menu when closed, X when open */
+.site-header__toggle-close,
+.site-header__toggle[aria-expanded="true"] .site-header__toggle-open {
+  display: none;
+}
+
+.site-header__toggle[aria-expanded="true"] .site-header__toggle-close {
+  display: inline-flex;
+}
+
+/* Telefonon a menü teljes szélességű, függőleges lista a fejléc alatt (CG 6.4).
+   JS mellett csak nyitott állapotban (site-header--menu-open) látszik; JS nélkül mindig.
+   On phones the menu is a full-width vertical list under the header (CG 6.4).
+   With JS it only shows when open (site-header--menu-open); without JS it always shows. */
+.site-header__nav {
+  flex-basis: 100%;
+}
+
+.js .site-header__nav {
+  display: none;
+}
+
+.site-header--menu-open .site-header__nav {
+  display: block;
+}
+
+.site-header__menu {
+  margin: 0 0 var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+/* Menüpont: telefonon soronként 48 px magas (CG 6.4); az aktuális oldal elsődleges színű, 600-as (aria-current)
+   Menu item: 48 px per row on phones (CG 6.4); the current page is primary coloured, weight 600 (aria-current) */
+.site-header__link {
+  display: flex;
+  align-items: center;
+  min-block-size: 3rem;
+  color: var(--app-text);
+  font-size: var(--app-fs-label);
+  text-decoration: none;
+}
+
+.site-header__link:hover {
+  color: var(--app-primary);
+}
+
+.site-header__link[aria-current="page"] {
+  color: var(--app-primary);
+  font-weight: 600;
+}
+
+/* A Kilépés POST űrlap gombja, de ugyanúgy néz ki, mint a többi menüpont
+   Logout is a POST form button but looks like the other menu items */
+.site-header__link--button {
+  inline-size: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Tablettől: nincs hamburger, a menü vízszintesen a logó és a témaváltó között (mintaoldal)
+   From tablet up: no hamburger, the menu sits horizontally between logo and theme switch (sample page) */
+@media (min-width: 600px) {
+  .site-header__inner {
+    flex-wrap: nowrap;
+    min-block-size: 4rem;
+  }
+
+  .site-header__toggle {
+    display: none;
+  }
+
+  .site-header__nav,
+  .js .site-header__nav {
+    display: block;
+    flex-basis: auto;
+    order: 1;
+    margin-inline-start: auto;
+  }
+
+  .site-header__actions {
+    order: 2;
+  }
+
+  .site-header__menu {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--space-4);
+    margin: 0;
+  }
+
+  .site-header__link {
+    min-block-size: 2.75rem;
+  }
+
+  .site-header__link--button {
+    inline-size: auto;
+  }
+
+  .site-header__theme {
+    min-block-size: 2.5rem;
+    padding-inline: var(--space-4);
+  }
+
+  .site-header__theme-label {
+    position: static;
+    inline-size: auto;
+    block-size: auto;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+/* ---------- site-footer (K-02) ---------- */
+
+.site-footer {
+  background: var(--app-surface);
+  border-block-start: var(--border-width) solid var(--app-border);
+}
+
+/* Telefonon egymás alatt, tablettől egy sorban: név + mondat balra, link jobbra
+   Stacked on phones, one row from tablet up: name + sentence on the left, link on the right */
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-inline-size: var(--width-content);
+  margin-inline: auto;
+  padding: var(--space-5) var(--gutter);
+}
+
+.site-footer__name {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--app-primary);
+  font-weight: 700;
+}
+
+.site-footer__tagline {
+  margin: var(--space-1) 0 0;
+  color: var(--app-text-muted);
+  font-size: var(--app-fs-small);
+}
+
+/* A link legalább 44 px magas, hogy telefonon könnyen eltalálható legyen (CG 5.5)
+   The link is at least 44 px tall so it is easy to hit on a phone (CG 5.5) */
+.site-footer__link {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  font-size: var(--app-fs-small);
+}
+
+@media (min-width: 600px) {
+  .site-footer__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* ---------- flash (K-03, CG 6.5) ---------- */
+
+/* Nincs bal oldali színes csík és árnyék; a változatot a háttér és a szövegszín jelzi
+   No coloured left stripe and no shadow; the variant is shown by background and text colour */
+.flash {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  font-size: var(--app-fs-body);
+}
+
+.flash__message {
+  margin: 0;
+}
+
+.flash--success {
+  background: var(--app-success-soft);
+  color: var(--app-success);
+}
+
+.flash--info {
+  background: var(--app-info-soft);
+  color: var(--app-info);
+}
+
+.flash--warning {
+  background: var(--app-warning-soft);
+  color: var(--app-warning);
+}
+
+.flash--error {
+  background: var(--app-danger-soft);
+  color: var(--app-danger);
+}
+
+/* ---------- button (CG 6.2, 5.5) ---------- */
+
+/* Magasság: telefonon 44 px, tablettől 40 px (CG 5.5); lekerekítés pill; ikon a felirat előtt
+   Height: 44 px on phones, 40 px from tablet up (CG 5.5); pill radius; icon before the label */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-block-size: 2.75rem;
+  padding: var(--space-2) var(--space-5);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-size: var(--app-fs-button);
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button--primary {
+  background: var(--app-primary);
+  border-color: var(--app-primary);
+  color: var(--app-on-primary);
+}
+
+.button--primary:hover {
+  background: var(--app-primary-hover);
+  border-color: var(--app-primary-hover);
+  color: var(--app-on-primary);
+}
+
+.button--secondary {
+  background: var(--app-surface);
+  border-color: var(--app-border-strong);
+  color: var(--app-text);
+}
+
+.button--secondary:hover {
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+.button--danger {
+  background: var(--app-surface);
+  border-color: var(--app-danger);
+  color: var(--app-danger);
+}
+
+.button--danger:hover {
+  background: var(--app-danger-soft);
+  color: var(--app-danger);
+}
+
+.button--ghost {
+  background: transparent;
+  color: var(--app-primary);
+}
+
+.button--ghost:hover {
+  color: var(--app-primary-hover);
+  text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .button {
+    min-block-size: 2.5rem;
+  }
+}
+
+/* ---------- home (S-01, CG 6.9) ---------- */
+
+/* Borító: telefonon és tableten a szöveg a kép fölött, asztalin egymás mellett (szöveg balra, kép jobbra)
+   Cover: text above the picture on phones and tablets, side by side on desktop (text left, picture right) */
+.home__hero {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+/* A cím a mese betűjével (Fraunces, SOFT 100) – ELTÉRÉS: a CG ezt a mese címére tartja fenn; itt a borító-hatás
+   miatt a kezdőoldal címe is ezt kapja. Méret: a címoldal tokenje (28 / 36 / 44 px).
+   The heading uses the story typeface (Fraunces, SOFT 100) – DEVIATION: the CG reserves it for story titles;
+   the home heading uses it for the cover effect. Size: the title-page token (28 / 36 / 44 px). */
+.home__title {
+  margin-block-end: var(--space-4);
+  font-family: var(--font-story-title);
+  font-size: var(--story-fs-cover-title);
+  font-weight: 600;
+  font-variation-settings: "SOFT" 100;
+  line-height: 1.15;
+}
+
+.home__lead {
+  max-inline-size: 48ch;
+  margin-block-end: var(--space-5);
+  color: var(--app-text-muted);
+}
+
+/* Napszak szerinti háttér: nappal rét, este erdő; a kép a témaváltóval együtt vált
+   Background by time of day: meadow by day, forest by night; the picture switches with the theme toggle */
+.home__scene-night,
+[data-theme="night"] .home__scene-day {
+  display: none;
+}
+
+[data-theme="night"] .home__scene-night {
+  display: block;
+}
+
+/* A három lépés: valódi sorrend, ezért lista; telefonon egymás alatt, tablettől egy sorban (CG 6.9)
+   The three steps: a real sequence, hence a list; stacked on phones, in one row from tablet up (CG 6.9) */
+.home__steps {
+  display: grid;
+  gap: var(--space-4);
+  margin: var(--space-7) 0 0;
+  padding: var(--space-5) 0 0;
+  border-block-start: var(--border-width) solid var(--app-border);
+  list-style: none;
+}
+
+.home__step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Kerek ikonjelvény a kiválasztott elemek halvány színével (--app-primary-soft)
+   Round icon badge in the soft selection colour (--app-primary-soft) */
+.home__step-badge {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  border-radius: var(--radius-pill);
+  background: var(--app-primary-soft);
+  color: var(--app-primary);
+  font-size: var(--app-fs-h3);
+}
+
+.home__step-label {
+  font-size: var(--app-fs-label);
+  font-weight: 600;
+}
+
+@media (min-width: 600px) {
+  .home__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .home__hero {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: var(--space-7);
+  }
+}
+
+/* ---------- privacy (S-02) ---------- */
+
+/* Olvasható sorhossz a hosszabb szöveghez / Readable line length for longer text */
+.privacy__lead,
+.privacy__section {
+  max-inline-size: 65ch;
+}
+
+.privacy__lead {
+  color: var(--app-text-muted);
+}
+
+.privacy__section {
+  margin-block-start: var(--space-5);
+}

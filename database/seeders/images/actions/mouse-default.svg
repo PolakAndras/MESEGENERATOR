@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Egér – áll · XS méretosztály: 240 px magas, talppont alul középen -->
+  <ellipse cx="240" cy="760" rx="80" ry="10" fill="#8A8479" transform="rotate(-12 240 760)"/>
+  <ellipse cx="370" cy="730" rx="110" ry="65" fill="#A9A39A"/>
+  <ellipse cx="330" cy="790" rx="30" ry="10" fill="#8A8479"/>
+  <ellipse cx="420" cy="790" rx="30" ry="10" fill="#8A8479"/>
+  <circle cx="460" cy="610" r="50" fill="#A9A39A"/>
+  <circle cx="460" cy="610" r="30" fill="#E4A9A0"/>
+  <circle cx="490" cy="685" r="55" fill="#A9A39A"/>
+  <ellipse cx="545" cy="700" rx="22" ry="16" fill="#A9A39A"/>
+  <circle cx="565" cy="698" r="8" fill="#E4A9A0"/>
+  <circle cx="515" cy="676" r="8" fill="#2A1E17"/>
+</svg>

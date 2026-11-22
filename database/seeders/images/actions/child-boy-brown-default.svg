@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Fiú – barna – áll · gyerekfigura: 800 px magas, talppont alul középen -->
+  <rect x="335" y="540" width="52" height="240" rx="24" fill="#DDA884"/>
+  <rect x="413" y="540" width="52" height="240" rx="24" fill="#DDA884"/>
+  <rect x="328" y="520" width="66" height="200" rx="26" fill="#3F5A73"/>
+  <rect x="406" y="520" width="66" height="200" rx="26" fill="#3F5A73"/>
+  <ellipse cx="355" cy="778" rx="46" ry="22" fill="#5A4235"/>
+  <ellipse cx="445" cy="778" rx="46" ry="22" fill="#5A4235"/>
+  <rect x="238" y="320" width="50" height="230" rx="25" fill="#F2C9A5"/>
+  <rect x="512" y="320" width="50" height="230" rx="25" fill="#F2C9A5"/>
+  <rect x="290" y="300" width="220" height="250" rx="50" fill="#4F7FA8"/>
+  <rect x="248" y="310" width="54" height="90" rx="27" fill="#3F6A8F"/>
+  <rect x="498" y="310" width="54" height="90" rx="27" fill="#3F6A8F"/>
+  <rect x="375" y="270" width="50" height="50" rx="20" fill="#DDA884"/>
+  <circle cx="282" cy="180" r="24" fill="#DDA884"/>
+  <circle cx="518" cy="180" r="24" fill="#DDA884"/>
+  <circle cx="400" cy="170" r="120" fill="#F2C9A5"/>
+  <path d="M282 160 Q282 0 400 0 Q518 0 518 160 Q470 95 400 100 Q330 95 282 160 Z" fill="#7A4B2A"/>
+  <circle cx="358" cy="180" r="12" fill="#2A1E17"/>
+  <circle cx="442" cy="180" r="12" fill="#2A1E17"/>
+  <circle cx="335" cy="215" r="16" fill="#E9A48F"/>
+  <circle cx="465" cy="215" r="16" fill="#E9A48F"/>
+  <path d="M372 222 Q400 250 428 222 Q400 236 372 222 Z" fill="#2A1E17"/>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
+  <!-- Napos rét · 4:3, talajsáv: 936–1200 px (78–100%) -->
+  <rect width="1600" height="1200" fill="#9CC7E4"/>
+  <circle cx="230" cy="190" r="95" fill="#F2D27A"/>
+  <ellipse cx="1180" cy="160" rx="130" ry="45" fill="#F4F7FA"/>
+  <ellipse cx="1260" cy="130" rx="80" ry="45" fill="#F4F7FA"/>
+  <ellipse cx="700" cy="250" rx="100" ry="35" fill="#F4F7FA"/>
+  <ellipse cx="300" cy="960" rx="520" ry="260" fill="#8DBB76"/>
+  <ellipse cx="1350" cy="960" rx="560" ry="280" fill="#7FB069"/>
+  <!-- Fa a jobb szélen / tree at the right edge -->
+  <rect x="1440" y="560" width="50" height="390" rx="20" fill="#7A5A3E"/>
+  <circle cx="1465" cy="500" r="150" fill="#4F8A5B"/>
+  <circle cx="1380" cy="580" r="90" fill="#4F8A5B"/>
+  <rect y="936" width="1600" height="264" fill="#5E9B57"/>
+  <rect y="936" width="1600" height="24" fill="#6FAE63"/>
+  <!-- Virágok a talajsáv szélein / flowers at the edges of the ground band -->
+  <circle cx="90" cy="1060" r="14" fill="#F2D27A"/>
+  <circle cx="160" cy="1120" r="12" fill="#F4F7FA"/>
+  <circle cx="1500" cy="1080" r="14" fill="#F2D27A"/>
+  <circle cx="1430" cy="1140" r="12" fill="#F4F7FA"/>
+</svg>
