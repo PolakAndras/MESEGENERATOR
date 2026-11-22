@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Http;
 class OpenAiCompatibleStoryGenerator implements StoryTextGenerator
 {
     private string $baseUrl;
+
     private ?string $apiKey;
+
     private string $model;
 
     public function __construct(array $provider)

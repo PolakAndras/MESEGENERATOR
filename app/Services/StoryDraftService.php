@@ -19,7 +19,9 @@ class StoryDraftService
     public const KEY = 'story_draft';
 
     public const STATUS_EDITING = 'editing';
+
     public const STATUS_GENERATED = 'generated';
+
     public const STATUS_SAVED = 'saved';
 
     public function get(): ?array

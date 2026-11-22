@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -15,6 +14,7 @@ class User extends Authenticatable
     // Konstansok a szerepkörökhöz, hogy a kódban ne szöveges literálok szerepeljenek (Backend Schema 5.).
     // Role constants so the code does not rely on string literals (Backend Schema 5.).
     public const ROLE_USER = 'user';
+
     public const ROLE_ADMIN = 'admin';
 
     /**
