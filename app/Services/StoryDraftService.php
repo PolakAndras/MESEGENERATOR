@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Character;
+use App\Models\StoryTheme;
 use App\Support\PlacementRules;
 
 /**
@@ -141,10 +142,26 @@ class StoryDraftService
         ));
     }
 
-    public function saveSettings(string $context, int $pageCount): void
+    /**
+     * 2. lépés (PRD US-24): a választott téma és az oldalszám. A context a téma neve olvasható szövegként: ez kerül a
+     * mentett mese context oszlopába és egy későbbi AI-kérésbe. Ha a téma vagy az oldalszám változik, a mese terve
+     * (StoryPlanner) érvényét veszti, mert más cselekményt, illetve más jelenetválogatást kell adnia.
+     * Step 2 (PRD US-24): the chosen theme and the page count. context holds the theme name as readable text: it goes
+     * into the saved story's context column and a later AI request. When the theme or the page count changes the story
+     * plan (StoryPlanner) is dropped, because it must give another plot or another choice of scenes.
+     */
+    public function saveSettings(StoryTheme $theme, int $pageCount): void
     {
         $draft = $this->get();
-        $draft['settings'] = ['context' => $context, 'page_count' => $pageCount];
+        $old = $draft['settings'];
+        if ($old === null || $old['theme_id'] !== $theme->id || $old['page_count'] !== $pageCount) {
+            $draft['plan'] = null;
+        }
+        $draft['settings'] = [
+            'theme_id' => $theme->id,
+            'context' => $theme->name,
+            'page_count' => $pageCount,
+        ];
 
         // Növeléskor új, üres oldalak; csökkentéskor a felesleges oldalak törlése (Backend Schema 9.3).
         // Growing adds empty pages; shrinking drops the extra pages (Backend Schema 9.3).
@@ -231,6 +248,20 @@ class StoryDraftService
     {
         $draft = $this->get();
         $draft['pages'][$number] = $page;
+        $this->put($draft);
+    }
+
+    // A mese terve (StoryPlanner): cselekmény, jelenetek, állattárs. Csak a StoryPlanner hozza létre.
+    // The story plan (StoryPlanner): plot, scenes, animal companion. Only StoryPlanner creates it.
+    public function plan(): ?array
+    {
+        return $this->get()['plan'] ?? null;
+    }
+
+    public function savePlan(array $plan): void
+    {
+        $draft = $this->get();
+        $draft['plan'] = $plan;
         $this->put($draft);
     }
 
@@ -330,6 +361,7 @@ class StoryDraftService
             'last_page' => null,
             'child' => null,
             'settings' => null,
+            'plan' => null,
             'pages' => [],
             'generated' => null,
             'saved_story_id' => null,

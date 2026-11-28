@@ -11,14 +11,9 @@ képet nem generál.
 A „fejlesztő” ebben a fájlban a projekt tulajdonosa (a dokumentumokban így szerepel).
 
 ## Tech stack / Technológia
-- Laravel ^8.83, PHP 8.1, MySQL 8.4, Blade + natív JavaScript (ES-modulok),
-  Windows, helyben XAMPP PHP + php artisan serve.
+
 - NINCS frontend-build (nincs npm, Vite, Mix). A CSS és a JS a public/ mappában van.
-- Az alkalmazás szerveroldalon renderelt, nem SPA.
-- Csak ingyenes eszközök. Az egyetlen hozzáadott csomag a
-  league/flysystem-aws-s3-v3. Breeze, Jetstream, Fortify és UI-csomag tilos.
-- Új Composer-csomag, külső könyvtár, CDN vagy külső betűtípus-kérés csak a
-  fejlesztő jóváhagyásával. composer update csak kérésre (a composer.lock rögzít).
+
 
 ## Project documentation / Dokumentáció
 - A tervek a docs/ mappában: PRD, App Flow, Tech Stack, Content Guidelines,
@@ -34,23 +29,9 @@ A „fejlesztő” ebben a fájlban a projekt tulajdonosa (a dokumentumokban íg
   ahol a tervek és a ticketek útmutatói készülnek). Ha a docs/ eltérni látszik,
   jelezd.
 
-## Workflow / Munkamód
-- Ticketenként dolgozunk (Implementation Plan). Csak az aktuális ticket
-  hatókörében dolgozz; ami nincs benne, azt csak jelezd.
-- A ticketben szereplő nevek javasolt nevek; a fejlesztő meglévő kódja az irányadó.
-- A lépésenkénti útmutatót a tervező chat adja; te a kijelölt részeket írod,
-  és kérésre átnézed a fejlesztő kódját (javaslattal, nem átírással).
-- Mindig a legegyszerűbb, működő megoldás.
 
-## Code ownership / Munkamegosztás
-- A kód nagy részét a fejlesztő írja. Csak ott írj kódot, ahol CLAUDE-jelölés van
-  (PHP/JS: // CLAUDE:, Blade: {{-- CLAUDE: --}}, CSS: /* CLAUDE: */), vagy ahol a
-  fejlesztő a kérésében kifejezetten megnevezi a fájlt.
-- A megírt rész fölött a CLAUDE-jelölést cseréld le a kétnyelvű, „miért így”
-  kommentre, hogy ne maradjon nyitott feladatjel.
-- Nevet (változó, függvény, osztály, fájl) ne változtass kérdezés nélkül.
-- A fejlesztő kódját ne módosítsd engedély nélkül: javasolj, és csak jóváhagyás
-  után változtass.
+
+
 
 ## Commands / Parancsok
 - Szerver: php artisan serve
@@ -106,13 +87,3 @@ A „fejlesztő” ebben a fájlban a projekt tulajdonosa (a dokumentumokban íg
 - A fázis-ellenőrzőlista a fázis végére vonatkozik.
 - A PR összevonását és az issue lezárását a fejlesztő végzi; te jelzed, ha
   szerinted a ticket kész.
-
-## Forbidden / Tiltott
-- .env: ne olvasd és ne módosítsd (a .env.example szerkeszthető). Ha új kulcs
-  kell, mondd meg a fejlesztőnek, mit írjon bele.
-- vendor/: ne módosítsd.
-- docs/: csak a fejlesztő engedélyével.
-- Már lefutott migrációt ne módosíts; helyette új migráció.
-- database/seeders/images/, storage/app/public/images/, public/fonts/:
-  fájlt ne törölj és ne nevezz át.
-- Naplóba (log) nem kerülhet gyereknév, kontextus, AI-szöveg vagy kulcs.

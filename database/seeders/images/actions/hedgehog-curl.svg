@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Sün – összegömbölyödik · S méretosztály: alaphelyzetben 360 px magas, talppont alul középen -->
+  <g transform="translate(-49.1 -134.2) scale(1.1227)">
+    <path d="M550 672 L584 650 L550 628 Z" fill="#4F3A2C"/>
+    <path d="M537.7 713.4 L576.5 701.8 L550.1 671.2 Z" fill="#4F3A2C"/>
+    <path d="M514.3 749.6 L554.8 749.5 L538.1 712.6 Z" fill="#4F3A2C"/>
+    <path d="M481.6 777.8 L520.5 789.1 L514.9 749 Z" fill="#4F3A2C"/>
+    <path d="M442.3 795.6 L476.4 817.4 L482.3 777.3 Z" fill="#4F3A2C"/>
+    <path d="M399.6 801.6 L426.2 832.1 L443.1 795.3 Z" fill="#4F3A2C"/>
+    <path d="M356.9 795.3 L373.8 832.1 L400.4 801.6 Z" fill="#4F3A2C"/>
+    <path d="M317.7 777.3 L323.6 817.4 L357.7 795.6 Z" fill="#4F3A2C"/>
+    <path d="M285.1 749 L279.5 789.1 L318.4 777.8 Z" fill="#4F3A2C"/>
+    <path d="M261.9 712.6 L245.2 749.5 L285.7 749.6 Z" fill="#4F3A2C"/>
+    <path d="M249.9 671.2 L223.5 701.8 L262.3 713.4 Z" fill="#4F3A2C"/>
+    <path d="M250 628 L216 650 L250 672 Z" fill="#4F3A2C"/>
+    <path d="M262.3 586.6 L223.5 598.2 L249.9 628.8 Z" fill="#4F3A2C"/>
+    <path d="M285.7 550.4 L245.2 550.5 L261.9 587.4 Z" fill="#4F3A2C"/>
+    <path d="M318.4 522.2 L279.5 510.9 L285.1 551 Z" fill="#4F3A2C"/>
+    <path d="M357.7 504.4 L323.6 482.6 L317.7 522.7 Z" fill="#4F3A2C"/>
+    <path d="M400.4 498.4 L373.8 467.9 L356.9 504.7 Z" fill="#4F3A2C"/>
+    <path d="M443.1 504.7 L426.2 467.9 L399.6 498.4 Z" fill="#4F3A2C"/>
+    <path d="M482.3 522.7 L476.4 482.6 L442.3 504.4 Z" fill="#4F3A2C"/>
+    <path d="M514.9 551 L520.5 510.9 L481.6 522.2 Z" fill="#4F3A2C"/>
+    <path d="M538.1 587.4 L554.8 550.5 L514.3 550.4 Z" fill="#4F3A2C"/>
+    <path d="M550.1 628.8 L576.5 598.2 L537.7 586.6 Z" fill="#4F3A2C"/>
+    <path d="M550 672 L584 650 L550 628 Z" fill="#4F3A2C"/>
+    <circle cx="400" cy="650" r="150" fill="#4F3A2C"/>
+    <circle cx="380" cy="620" r="82.5" fill="#6E5440"/>
+    <ellipse cx="510" cy="720" rx="55" ry="45" fill="#D9B48F"/>
+    <circle cx="560" cy="722" r="13" fill="#2A1E17"/>
+    <path d="M490 705 Q505 720 520 705 Q505 711.8 490 705 Z" fill="#2A1E17"/>
+  </g>
+</svg>

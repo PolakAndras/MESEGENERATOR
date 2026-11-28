@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Medve – alszik · L méretosztály: alaphelyzetben 680 px magas, talppont alul középen -->
+  <g transform="translate(-164.7 -150.4) scale(1.1765)">
+    <path d="M495.2 783.2 L669.5 760.7 L660.5 691.1 L486.3 713.5 Z" fill="#6E452D"/>
+    <circle cx="490.8" cy="748.3" r="35.1" fill="#6E452D"/>
+    <circle cx="665" cy="725.9" r="35.1" fill="#6E452D"/>
+    <ellipse cx="682.2" cy="722" rx="48.4" ry="29.6" fill="#6E452D"/>
+    <circle cx="243.2" cy="656.5" r="28" fill="#6E452D"/>
+    <ellipse cx="400" cy="685.2" rx="165" ry="114.8" fill="#8B5A3C"/>
+    <ellipse cx="424.8" cy="736.9" rx="102.3" ry="43.6" fill="#9E6B4A"/>
+    <ellipse cx="317.5" cy="725" rx="97" ry="70.6" fill="#8B5A3C"/>
+    <path d="M317.5 798 L414.5 798 L414.5 731.8 L317.5 731.8 Z" fill="#8B5A3C"/>
+    <circle cx="317.5" cy="764.9" r="33.1" fill="#8B5A3C"/>
+    <circle cx="414.5" cy="764.9" r="33.1" fill="#8B5A3C"/>
+    <ellipse cx="431.7" cy="763" rx="48.4" ry="29.6" fill="#6E452D"/>
+    <path d="M476.5 782.9 L572.8 799.5 L584.7 730.3 L488.5 713.7 Z" fill="#8B5A3C"/>
+    <circle cx="482.5" cy="748.3" r="35.1" fill="#8B5A3C"/>
+    <circle cx="578.8" cy="764.9" r="35.1" fill="#8B5A3C"/>
+    <ellipse cx="595.9" cy="763" rx="48.4" ry="29.6" fill="#6E452D"/>
+    <path d="M511.6 722 L557.8 676.1 L473.2 591 L427 636.9 Z" fill="#8B5A3C"/>
+    <path d="M478.4 680.7 L558.8 744.1 L633.1 649.8 L552.6 586.4 Z" fill="#8B5A3C"/>
+    <circle cx="469.3" cy="679.5" r="60" fill="#8B5A3C"/>
+    <circle cx="515.5" cy="633.5" r="60" fill="#8B5A3C"/>
+    <circle cx="596" cy="697" r="60" fill="#8B5A3C"/>
+    <g transform="rotate(8 596 697)">
+    <circle cx="534.4" cy="609.6" r="38.1" fill="#6E452D"/>
+    <circle cx="534.4" cy="609.6" r="19" fill="#B88A66"/>
+    <circle cx="646.4" cy="609.6" r="38.1" fill="#6E452D"/>
+    <circle cx="646.4" cy="609.6" r="19" fill="#B88A66"/>
+    <circle cx="596" cy="697" r="112" fill="#8B5A3C"/>
+    <ellipse cx="665.4" cy="728.3" rx="53.8" ry="40.3" fill="#B88A66"/>
+    <ellipse cx="705.7" cy="710.4" rx="19" ry="13.4" fill="#2A1E17"/>
+    <path d="M614.4 674.6 Q629.6 689.7 644.7 674.6 Q629.6 681.4 614.4 674.6 Z" fill="#2A1E17"/>
+    </g>
+    <path d="M629.6 461.8 L691.2 461.8 L691.2 475.3 L650.5 509.8 L691.2 509.8 L691.2 523.4 L629.6 523.4 L629.6 509.8 L670.2 475.3 L629.6 475.3 Z" fill="#8FA7C4"/>
+    <path d="M700.4 381.7 L744.7 381.7 L744.7 391.4 L715.5 416.3 L744.7 416.3 L744.7 426 L700.4 426 L700.4 416.3 L729.7 391.4 L700.4 391.4 Z" fill="#8FA7C4"/>
+  </g>
+</svg>

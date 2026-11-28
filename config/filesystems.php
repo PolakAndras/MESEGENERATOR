@@ -24,7 +24,7 @@ return [
     | may even configure multiple disks of the same driver. Defaults have
     | been setup for each driver as an example of the required options.
     |
-    | Supported Drivers: "local", "ftp", "sftp", "s3"
+    | Supported Drivers: "local"
     |
     */
 
@@ -42,35 +42,11 @@ return [
             'visibility' => 'public',
         ],
 
-        's3' => [
-            'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION'),
-            'bucket' => env('AWS_BUCKET'),
-            'url' => env('AWS_URL'),
-            'endpoint' => env('AWS_ENDPOINT'),
-            'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
-        ],
-
-        // Minden kép egyetlen tárolón keresztül (Tech Stack 4.3): helyben mappa, élesben Cloudflare R2 (s3 driver).
-        // A driver a .env-ből jön, így a kód sehol nem tudja, hol vannak valójában a képek.
-        // Every image goes through this one disk (Tech Stack 4.3): a folder locally, Cloudflare R2 (s3 driver) in production.
-        // The driver comes from .env, so no code needs to know where the images actually live.
-        // Minden kép ezen a tárolón át (Tech Stack 4.3). Helyben mappa, élesben Cloudflare R2 (s3 driver);
-        // a root és az url környezetenként más, ezért a driver dönt (IP F1-07 döntési pontja, F5).
-        // Every image goes through this disk (Tech Stack 4.3). Locally a folder, in production Cloudflare R2
-        // (s3 driver); root and url differ per environment, so the driver decides (IP F1-07 decision point, F5).
-        'images' => env('IMAGES_DISK_DRIVER', 'local') === 's3' ? [
-            'driver' => 's3',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION', 'auto'),
-            'bucket' => env('AWS_BUCKET'),
-            'endpoint' => env('AWS_ENDPOINT'),
-            'url' => env('AWS_URL'),  // az R2 nyilvános címe (r2.dev), NY-04 / the R2 public URL (r2.dev), NY-04
-            'use_path_style_endpoint' => true,
-        ] : [
+        // Minden kép ezen az egy tárolón át (Tech Stack 4.3). Az alkalmazás saját VPS-en fut, ezért a képek a szerver
+        // mappájában vannak (felhőtárhely nélkül); a public/storage linken keresztül érhetők el (php artisan storage:link).
+        // Every image goes through this one disk (Tech Stack 4.3). The app runs on its own VPS, so images live in the
+        // server's folder (no cloud storage); they are served through the public/storage link (php artisan storage:link).
+        'images' => [
             'driver' => 'local',
             'root' => storage_path('app/public/images'),
             'url' => env('APP_URL').'/storage/images',

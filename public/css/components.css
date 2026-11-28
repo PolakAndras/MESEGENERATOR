@@ -738,17 +738,6 @@
   font-size: var(--app-fs-small);
 }
 
-.form-field__counter {
-  margin: var(--space-1) 0 0;
-  color: var(--app-text-muted);
-  font-size: var(--app-fs-caption);
-  text-align: end;
-}
-
-.form-field__counter--low {
-  color: var(--app-warning);
-}
-
 /* Választókártyák (nem, hajszín, oldalszám): 44 px magas címkék, kiválasztva primary-soft + 1.5px primary keret
    Choice cards (gender, hair, page count): 44 px labels, selected = primary-soft + 1.5px primary border */
 .form-field__choices {

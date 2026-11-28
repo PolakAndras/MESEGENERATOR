@@ -1,6 +1,4 @@
-* text=auto
-# A Docker-kép shell-szkriptje Linuxon fut, ezért mindig LF sorvéggel / The Docker shell script runs on Linux: always LF
-*.sh text eol=lf
+* text=auto eol=lf
 
 *.blade.php diff=html
 *.css diff=css

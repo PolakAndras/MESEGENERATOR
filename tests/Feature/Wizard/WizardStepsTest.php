@@ -57,25 +57,33 @@ class WizardStepsTest extends TestCase
             ->assertSessionHasErrors('child_gender');
     }
 
-    public function test_step_two_saves_context_and_page_count()
+    // US-24: a téma a 15 közül; a context a téma neve (ez kerül a mentett mesébe).
+    // US-24: the theme out of 15; context is the theme name (stored with the saved story).
+    public function test_step_two_saves_theme_and_page_count()
     {
         $this->post(route('stories.create.child.store'), $this->childData());
+        $this->get(route('stories.create.settings'))->assertSee($this->theme->name)->assertSee('name="theme_id"', false);
 
-        $this->post(route('stories.create.settings.store'), ['context' => 'barátság', 'page_count' => 9])
+        $this->post(route('stories.create.settings.store'), ['theme_id' => $this->theme->id, 'page_count' => 9])
             ->assertRedirect(route('stories.create.page', 1));
 
-        $draft = session(StoryDraftService::KEY);
-        $this->assertSame(9, $draft['settings']['page_count']);
-        $this->assertCount(9, $draft['pages']);
+        $settings = session(StoryDraftService::KEY)['settings'];
+        $this->assertSame(9, $settings['page_count']);
+        $this->assertSame($this->theme->id, $settings['theme_id']);
+        $this->assertSame('Barátság', $settings['context']);
+        $this->assertArrayNotHasKey('favorite', $settings);
+        $this->assertCount(9, session(StoryDraftService::KEY)['pages']);
     }
 
-    public function test_step_two_rejects_context_over_1000_characters_and_invalid_page_count()
+    public function test_step_two_requires_a_valid_theme_and_page_count()
     {
         $this->post(route('stories.create.child.store'), $this->childData());
 
-        $this->post(route('stories.create.settings.store'), ['context' => Str::repeat('a', 1001), 'page_count' => 11])
-            ->assertSessionHasErrors(['context', 'page_count']);
-        $this->post(route('stories.create.settings.store'), ['context' => 'barátság', 'page_count' => 3])
+        $this->post(route('stories.create.settings.store'), ['page_count' => 11])
+            ->assertSessionHasErrors(['theme_id', 'page_count']);
+        $this->post(route('stories.create.settings.store'), ['theme_id' => 999999, 'page_count' => 8])
+            ->assertSessionHasErrors('theme_id');
+        $this->post(route('stories.create.settings.store'), ['theme_id' => $this->theme->id, 'page_count' => 3])
             ->assertSessionHasErrors('page_count');
     }
 
@@ -84,7 +92,7 @@ class WizardStepsTest extends TestCase
     {
         $this->post(route('stories.create.child.store'), $this->childData());
 
-        $this->post(route('stories.create.settings.store'), ['context' => 'barátság', 'page_count' => 4])
+        $this->post(route('stories.create.settings.store'), ['theme_id' => $this->theme->id, 'page_count' => 4])
             ->assertSessionHasNoErrors();
         $this->assertCount(4, session(StoryDraftService::KEY)['pages']);
         $this->get(route('stories.create.settings'))->assertSee(__('wizard.settings.pages_option', ['count' => 4]));
@@ -95,12 +103,12 @@ class WizardStepsTest extends TestCase
         $this->completeSteps(10);
         $this->post(route('stories.create.page.store', 10), $this->pageData(['target' => 'prev']));
 
-        $this->post(route('stories.create.settings.store'), ['context' => 'barátság', 'page_count' => 8])
+        $this->post(route('stories.create.settings.store'), ['theme_id' => $this->theme->id, 'page_count' => 8])
             ->assertRedirect(route('stories.create.settings'))
             ->assertSessionHas('confirm_reduce');
         $this->assertCount(10, session(StoryDraftService::KEY)['pages']);
 
-        $this->post(route('stories.create.settings.store'), ['context' => 'barátság', 'page_count' => 8, 'confirm_reduce' => 1]);
+        $this->post(route('stories.create.settings.store'), ['theme_id' => $this->theme->id, 'page_count' => 8, 'confirm_reduce' => 1]);
         $this->assertCount(8, session(StoryDraftService::KEY)['pages']);
     }
 
@@ -113,7 +121,7 @@ class WizardStepsTest extends TestCase
         $this->post(route('stories.create.child.store'), $this->childData());
         $this->get(route('stories.create.page', 1))->assertRedirect(route('stories.create.settings'));
 
-        $this->post(route('stories.create.settings.store'), ['context' => 'barátság', 'page_count' => 8]);
+        $this->post(route('stories.create.settings.store'), ['theme_id' => $this->theme->id, 'page_count' => 8]);
         $this->get(route('stories.create.page', 99))->assertRedirect(route('stories.create.page', 1));
         $this->get(route('stories.create.page', 1))->assertOk();
     }

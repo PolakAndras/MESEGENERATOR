@@ -37,7 +37,7 @@ class SavedStoriesTest extends TestCase
         $this->assertSame(5, $story->child_age);
         $this->assertSame('girl', $story->child_gender);
         $this->assertSame('red', $story->child_hair_color);
-        $this->assertSame('barátság', $story->context);
+        $this->assertSame('Barátság', $story->context);  // a választott téma neve / the chosen theme's name
         $this->assertCount(8, $story->pages);
         $this->assertNotSame('', $story->pages[0]->text);
         $this->assertSame($this->forest->id, (int) $story->pages[0]->background_id);
@@ -79,16 +79,16 @@ class SavedStoriesTest extends TestCase
         $this->assertDatabaseHas('stories', ['id' => $story->id]);
     }
 
-    public function test_owner_reads_saved_story_with_ai_label()
+    public function test_owner_reads_saved_story()
     {
         $story = Story::factory()->withPages()->create();
 
         $this->actingAs($story->user)->get(route('stories.show', ['story' => $story, 'page' => 2]))
             ->assertOk()
-            ->assertSee('A(z) 2. oldal szövege.')
-            ->assertSee(__('story.ai_badge'));
+            ->assertSee('A(z) 2. oldal szövege.');
 
-        $this->actingAs($story->user)->get(route('stories.show', $story))->assertSee(__('story.ai_notice_full'));
+        $this->actingAs($story->user)->get(route('stories.show', $story))
+            ->assertSee(__('story.main_character', ['name' => $story->child_name]));
     }
 
     public function test_renamed_catalog_items_still_render_in_saved_story()

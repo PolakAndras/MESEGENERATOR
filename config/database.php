@@ -58,9 +58,10 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
-            'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
+            // Az SSL-tanúsítvány opciója kikerült: a MySQL ugyanazon a VPS-en fut, a PDO::MYSQL_ATTR_SSL_CA pedig
+            // PHP 8.5-ben elavult. / The SSL certificate option was removed: MySQL runs on the same VPS, and
+            // PDO::MYSQL_ATTR_SSL_CA is deprecated in PHP 8.5.
+            'options' => [],
         ],
 
         'pgsql' => [

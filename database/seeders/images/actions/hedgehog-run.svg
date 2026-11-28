@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Sün – fut · S méretosztály: alaphelyzetben 360 px magas, talppont alul középen -->
+  <g transform="translate(-80 -129.7) scale(1.1227)">
+    <path d="M298.3 732.7 L253.3 775.7 L276.7 800.3 L321.7 757.3 Z" fill="#B08C68"/>
+    <circle cx="310" cy="745" r="17" fill="#B08C68"/>
+    <circle cx="265" cy="788" r="17" fill="#B08C68"/>
+    <ellipse cx="277" cy="790" rx="26" ry="13" fill="#8A6A50"/>
+    <path d="M448.3 757.3 L493.3 800.3 L516.7 775.7 L471.7 732.7 Z" fill="#B08C68"/>
+    <circle cx="460" cy="745" r="17" fill="#B08C68"/>
+    <circle cx="505" cy="788" r="17" fill="#B08C68"/>
+    <ellipse cx="517" cy="790" rx="26" ry="13" fill="#8A6A50"/>
+    <g transform="rotate(-6 400 705)">
+    <ellipse cx="440" cy="750.5" rx="171" ry="80.6" fill="#B08C68"/>
+    <path d="M210 683 L176 705 L210 727 Z" fill="#4F3A2C"/>
+    <path d="M217.9 658.1 L180.3 673 L209.4 701.2 Z" fill="#4F3A2C"/>
+    <path d="M232.9 634.9 L193.1 642.2 L216 675.6 Z" fill="#4F3A2C"/>
+    <path d="M254.2 614.5 L213.8 613.9 L229.8 651.1 Z" fill="#4F3A2C"/>
+    <path d="M281.2 597.5 L241.6 589 L250.1 628.6 Z" fill="#4F3A2C"/>
+    <path d="M312.7 584.7 L275.6 568.6 L276.1 609.1 Z" fill="#4F3A2C"/>
+    <path d="M347.6 576.5 L314.3 553.5 L307 593.3 Z" fill="#4F3A2C"/>
+    <path d="M384.5 573.2 L356.3 544.2 L341.4 581.8 Z" fill="#4F3A2C"/>
+    <path d="M422 575 L400 541 L378 575 Z" fill="#4F3A2C"/>
+    <path d="M458.6 581.8 L443.7 544.2 L415.5 573.2 Z" fill="#4F3A2C"/>
+    <path d="M493 593.3 L485.7 553.5 L452.4 576.5 Z" fill="#4F3A2C"/>
+    <path d="M523.9 609.1 L524.4 568.6 L487.3 584.7 Z" fill="#4F3A2C"/>
+    <path d="M549.9 628.6 L558.4 589 L518.8 597.5 Z" fill="#4F3A2C"/>
+    <path d="M570.2 651.1 L586.2 613.9 L545.8 614.5 Z" fill="#4F3A2C"/>
+    <path d="M584 675.6 L606.9 642.2 L567.1 634.9 Z" fill="#4F3A2C"/>
+    <path d="M590.6 701.2 L619.7 673 L582.1 658.1 Z" fill="#4F3A2C"/>
+    <path d="M590 727 L624 705 L590 683 Z" fill="#4F3A2C"/>
+    <path d="M210 763.5 Q210 575 400 575 Q542.5 575 561.5 718.0 L476.0 770.0 Z" fill="#4F3A2C"/>
+    <circle cx="305" cy="653" r="16" fill="#6E5440"/>
+    <circle cx="381" cy="627" r="16" fill="#6E5440"/>
+    <circle cx="457" cy="646.5" r="16" fill="#6E5440"/>
+    <circle cx="314.5" cy="711.5" r="16" fill="#6E5440"/>
+    <circle cx="400" cy="685.5" r="16" fill="#6E5440"/>
+    <path d="M466.8 656 Q596.8 671 661.8 751 Q596.8 801 486.8 793 Z" fill="#D9B48F"/>
+    <circle cx="658.8" cy="749" r="16" fill="#2A1E17"/>
+    <circle cx="528.8" cy="683" r="18" fill="#6E5440"/>
+    <circle cx="566.8" cy="713" r="13" fill="#2A1E17"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Béka – ugrik · XS méretosztály: alaphelyzetben 240 px magas, talppont alul középen -->
+  <g transform="translate(81.8 109.8) scale(0.7749)">
+    <g transform="rotate(-28 400 520)">
+    <path d="M299.7 539.4 L159.7 609.4 L180.3 650.6 L320.3 580.6 Z" fill="#557F44"/>
+    <path d="M161.5 608.6 L61.5 648.6 L78.5 691.4 L178.5 651.4 Z" fill="#557F44"/>
+    <circle cx="310" cy="560" r="23" fill="#557F44"/>
+    <circle cx="170" cy="630" r="23" fill="#557F44"/>
+    <circle cx="70" cy="670" r="23" fill="#557F44"/>
+    <ellipse cx="50" cy="675" rx="50" ry="18" fill="#557F44"/>
+    <path d="M325.3 562.3 L205.3 662.3 L234.7 697.7 L354.7 597.7 Z" fill="#6FA35A"/>
+    <path d="M204.9 662.7 L124.9 732.7 L155.1 767.3 L235.1 697.3 Z" fill="#6FA35A"/>
+    <circle cx="340" cy="580" r="23" fill="#6FA35A"/>
+    <circle cx="220" cy="680" r="23" fill="#6FA35A"/>
+    <circle cx="140" cy="750" r="23" fill="#6FA35A"/>
+    <ellipse cx="120" cy="758" rx="52" ry="18" fill="#557F44"/>
+    <ellipse cx="400" cy="520" rx="170" ry="110" fill="#6FA35A"/>
+    <ellipse cx="440" cy="570" rx="110" ry="55" fill="#B9D59A"/>
+    <path d="M487.1 575.7 L597.1 595.7 L602.9 564.3 L492.9 544.3 Z" fill="#6FA35A"/>
+    <path d="M604.4 595.4 L674.4 575.4 L665.6 544.6 L595.6 564.6 Z" fill="#6FA35A"/>
+    <circle cx="490" cy="560" r="16" fill="#6FA35A"/>
+    <circle cx="600" cy="580" r="16" fill="#6FA35A"/>
+    <circle cx="670" cy="560" r="16" fill="#6FA35A"/>
+    <ellipse cx="690" cy="560" rx="30" ry="16" fill="#557F44"/>
+    <circle cx="420" cy="425" r="46" fill="#557F44"/>
+    <circle cx="420" cy="425" r="32" fill="#F3F0E6"/>
+    <circle cx="430" cy="428" r="15" fill="#2A1E17"/>
+    <circle cx="495" cy="425" r="46" fill="#6FA35A"/>
+    <circle cx="495" cy="425" r="32" fill="#F3F0E6"/>
+    <circle cx="505" cy="428" r="15" fill="#2A1E17"/>
+    <path d="M460 500 Q530 530 565 505 Q530 542 460 500 Z" fill="#557F44"/>
+    </g>
+  </g>
+</svg>

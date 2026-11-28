@@ -14,18 +14,35 @@ return [
         'user' => ['pages_min' => 4, 'pages_max' => 10, 'animals_per_page' => 4],
     ],
 
-    // Véletlenszerű kitöltés (PRD US-21): oldalanként legfeljebb ennyi állat, és ekkora eséllyel szerepel a gyerek.
-    // Random fill (PRD US-21): at most this many animals per page, and this chance that the child appears.
-    'random' => [
-        'animals_max' => 2,
-        'child_chance' => 75,  // százalék / percent
+    // A mesegyűjtemény jeleneteinek képi jelölése (PRD 1.6 US-21, US-24). A jelenet csak típust ad meg (pl. „mozog”),
+    // a konkrét cselekvést és hátteret ez a táblázat választja ki, így új póz vagy háttér felvételekor nem kell az
+    // összes jelenetet átírni. Ha a szereplőnek nincs az adott típusú póza, alaphelyzetben (áll) marad.
+    // Picture hints of the story collection's scenes (PRD 1.6 US-21, US-24). A scene only names a kind (e.g. "move");
+    // this table maps it to real actions and backgrounds, so adding a pose or background needs no scene rewrite.
+    // A character without a pose of that kind stays in its default (áll).
+    'scenes' => [
+        'pose_kinds' => [
+            'stand' => ['áll'],
+            'move' => ['fut', 'szalad', 'ugrik', 'ugrál'],
+            'rest' => ['ül', 'legel', 'összegömbölyödik', 'mosakszik', 'szimatol', 'répát eszik', 'sajtot eszik', 'almát visz', 'ágaskodik'],
+            'sleep' => ['alszik'],
+            'happy' => ['integet', 'pacsit ad', 'ugrál', 'ugrik', 'brekeg'],
+        ],
+        'background_kinds' => [
+            'home' => 'Esti hálószoba',
+            'day' => 'Napos rét',
+            'night' => 'Éjszakai erdő',
+            'snow' => 'Havas táj',
+        ],
+        // Véletlen oldalon: a társ a gyerek melletti helyek egyikén, a mellékszereplő a túloldali szélen.
+        // On a random page: the companion on a slot next to the child, the extra animal on the far other side.
+        'companion_slots' => [2, 3],
     ],
 
     // Típusfüggetlen korlátok / Limits independent of the user type
     'child_name_max' => 50,   // BR-14
     'child_age_min' => 2,     // BR-10
     'child_age_max' => 10,
-    'context_max' => 1000,    // BR-13
 
     // BR-05, BR-06: cselekvések szereplőtípusonként (alaphelyzettel együtt)
     // BR-05, BR-06: actions per character type (including the default action)
@@ -54,9 +71,11 @@ return [
         ],
     ],
 
-    // Tech Stack 5.1: demo | groq | mistral. A demo AI-hívás nélkül, kézzel írt mintaszöveggel dolgozik.
-    // Tech Stack 5.1: demo | groq | mistral. demo works without an AI call, using hand-written sample text.
-    'generator' => env('STORY_GENERATOR', 'demo'),
+    // templates | groq | mistral (Tech Stack 1.4). Alapból a mesegyűjtemény (AI nélkül, PRD US-24); az AI későbbre,
+    // kikapcsolva marad, a STORY_GENERATOR=groq kapcsolja be. Ismeretlen érték esetén is a mesegyűjtemény fut.
+    // templates | groq | mistral (Tech Stack 1.4). By default the story collection (no AI, PRD US-24); AI stays switched
+    // off for later and STORY_GENERATOR=groq turns it on. Any unknown value also falls back to the story collection.
+    'generator' => env('STORY_GENERATOR', 'templates'),
 
     // Az admin fiók a seederhez (PRD US-19). Konfigurációban, mert config:cache után az env() máshol üres értéket ad.
     // The admin account for the seeder (PRD US-19). In config, because after config:cache env() is empty elsewhere.

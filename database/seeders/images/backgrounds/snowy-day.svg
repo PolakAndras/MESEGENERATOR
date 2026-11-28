@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
+  <!-- Havas táj · 4:3, talajsáv: 936–1200 px (78–100%) – a Napos rét téli párja (PRD 1.6) -->
+  <rect width="1600" height="1200" fill="#C9D9E6"/>
+  <circle cx="230" cy="190" r="85" fill="#F4ECD0"/>
+  <ellipse cx="1180" cy="160" rx="130" ry="45" fill="#EEF3F7"/>
+  <ellipse cx="1260" cy="130" rx="80" ry="45" fill="#EEF3F7"/>
+  <ellipse cx="700" cy="250" rx="100" ry="35" fill="#EEF3F7"/>
+  <ellipse cx="300" cy="960" rx="520" ry="260" fill="#E4ECF2"/>
+  <ellipse cx="1350" cy="960" rx="560" ry="280" fill="#DCE6EE"/>
+  <!-- Havas fa a jobb szélen / snowy tree at the right edge -->
+  <rect x="1440" y="560" width="50" height="390" rx="20" fill="#7A5A3E"/>
+  <circle cx="1465" cy="500" r="150" fill="#3F6E52"/>
+  <circle cx="1380" cy="580" r="90" fill="#3F6E52"/>
+  <ellipse cx="1465" cy="395" rx="110" ry="45" fill="#F7FAFC"/>
+  <ellipse cx="1375" cy="515" rx="70" ry="28" fill="#F7FAFC"/>
+  <rect y="936" width="1600" height="264" fill="#F2F6F9"/>
+  <rect y="936" width="1600" height="24" fill="#FFFFFF"/>
+  <!-- Hópelyhek az ég szélein, a figurák sávjától távol / snowflakes at the sky's edges, away from the figures -->
+  <circle cx="90" cy="420" r="9" fill="#FFFFFF"/>
+  <circle cx="170" cy="560" r="7" fill="#FFFFFF"/>
+  <circle cx="60" cy="700" r="8" fill="#FFFFFF"/>
+  <circle cx="1540" cy="160" r="9" fill="#FFFFFF"/>
+  <circle cx="1080" cy="330" r="7" fill="#FFFFFF"/>
+  <circle cx="420" cy="90" r="8" fill="#FFFFFF"/>
+  <circle cx="900" cy="120" r="6" fill="#FFFFFF"/>
+</svg>

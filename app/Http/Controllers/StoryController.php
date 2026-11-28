@@ -14,10 +14,6 @@ use Illuminate\Http\Request;
  * Saved stories: save, My stories, view, delete (App Flow S-10, S-11, S-12; PRD US-14 – US-16).
  * Another user's story gives 404, so even its existence is not revealed (App Flow D-21, Backend Schema 10.3).
  */
-
-function sayHello(){return "Hello";
-};
-
 class StoryController extends Controller
 {
     public function store(Request $request, StoryDraftService $drafts, StorySaver $saver)

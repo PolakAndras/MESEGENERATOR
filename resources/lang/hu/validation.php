@@ -139,8 +139,8 @@ return [
         'child_hair_color' => [
             'required' => 'Válaszd ki a hajszínt.',
         ],
-        'context' => [
-            'required' => 'Írd le röviden, miről szóljon a mese.',
+        'theme_id' => [
+            'required' => 'Válassz témát a mesének.',
         ],
         'page_count' => [
             'required' => 'Válaszd ki, hány oldalas legyen a mese.',
@@ -173,7 +173,7 @@ return [
         'child_age' => 'életkor',
         'child_gender' => 'nem',
         'child_hair_color' => 'hajszín',
-        'context' => 'a mese témája',
+        'theme_id' => 'a mese témája',
         'page_count' => 'oldalszám',
         'background_id' => 'háttér',
         'animals' => 'állatok',

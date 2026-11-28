@@ -66,7 +66,7 @@ class StoryGenerationController extends Controller
                 ->with('confirm_reduce', ['from' => min($lost), 'to' => max($lost)]);
         }
 
-        $this->drafts->saveSettings($request->input('context'), $pageCount);
+        $this->drafts->saveSettings($request->theme(), $pageCount);
 
         return $this->attempt($request, $service, $randomizer, 1);
     }

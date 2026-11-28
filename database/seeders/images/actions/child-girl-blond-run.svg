@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Lány – szőke – szalad · gyerekfigura: alaphelyzetben 800 px magas, talppont alul középen -->
+  <g transform="translate(-4 0) scale(1.0000)">
+    <g transform="rotate(0 400 300)">
+    <path d="M262 170 Q262 100 400 100 Q538 100 538 170 L538 390 Q538 420 508 420 L292 420 Q262 420 262 390 Z" fill="#C9A54E"/>
+    </g>
+    <path d="M341.2 529.6 L294.2 637.6 L341.8 658.4 L388.8 550.4 Z" fill="#DDA884"/>
+    <path d="M293.8 657.5 L327.8 744.5 L376.2 725.5 L342.2 638.5 Z" fill="#DDA884"/>
+    <circle cx="365" cy="540" r="26" fill="#DDA884"/>
+    <circle cx="318" cy="648" r="26" fill="#DDA884"/>
+    <circle cx="352" cy="735" r="26" fill="#DDA884"/>
+    <ellipse cx="344" cy="741" rx="46" ry="22" fill="#5A4235"/>
+    <path d="M409.2 542.8 L422.2 662.8 L473.8 657.2 L460.8 537.2 Z" fill="#DDA884"/>
+    <path d="M422 660.9 L426 772.9 L478 771.1 L474 659.1 Z" fill="#DDA884"/>
+    <circle cx="435" cy="540" r="26" fill="#DDA884"/>
+    <circle cx="448" cy="660" r="26" fill="#DDA884"/>
+    <circle cx="452" cy="772" r="26" fill="#DDA884"/>
+    <ellipse cx="460" cy="778" rx="46" ry="22" fill="#5A4235"/>
+    <path d="M246.1 327.9 L196.1 417.9 L239.9 442.1 L289.9 352.1 Z" fill="#F2C9A5"/>
+    <path d="M199.4 446.7 L253.4 506.7 L290.6 473.3 L236.6 413.3 Z" fill="#F2C9A5"/>
+    <circle cx="268" cy="340" r="25" fill="#F2C9A5"/>
+    <circle cx="218" cy="430" r="25" fill="#F2C9A5"/>
+    <circle cx="272" cy="490" r="25" fill="#F2C9A5"/>
+    <path d="M243.5 326.4 L212.5 382.2 L261.5 409.4 L292.5 353.6 Z" fill="#A9576A"/>
+    <circle cx="268" cy="340" r="28" fill="#A9576A"/>
+    <circle cx="237" cy="395.8" r="28" fill="#A9576A"/>
+    <circle cx="272" cy="490" r="30" fill="#F2C9A5"/>
+    <path d="M511.8 354.7 L569.8 434.7 L610.2 405.3 L552.2 325.3 Z" fill="#F2C9A5"/>
+    <path d="M565 418.8 L560 518.8 L610 521.2 L615 421.2 Z" fill="#F2C9A5"/>
+    <circle cx="532" cy="340" r="25" fill="#F2C9A5"/>
+    <circle cx="590" cy="420" r="25" fill="#F2C9A5"/>
+    <circle cx="585" cy="520" r="25" fill="#F2C9A5"/>
+    <path d="M509.3 356.4 L545.3 406 L590.6 373.2 L554.7 323.6 Z" fill="#A9576A"/>
+    <circle cx="532" cy="340" r="28" fill="#A9576A"/>
+    <circle cx="568" cy="389.6" r="28" fill="#A9576A"/>
+    <circle cx="585" cy="520" r="30" fill="#F2C9A5"/>
+    <path d="M330 300 H470 Q490 300 495 330 L540 590 Q545 620 515 620 H285 Q255 620 260 590 L305 330 Q310 300 330 300 Z" fill="#C76B7A"/>
+    <circle cx="268" cy="340" r="30" fill="#A9576A"/>
+    <circle cx="532" cy="340" r="30" fill="#A9576A"/>
+    <path d="M246.1 327.9 L196.1 417.9 L239.9 442.1 L289.9 352.1 Z" fill="#F2C9A5"/>
+    <path d="M199.4 446.7 L253.4 506.7 L290.6 473.3 L236.6 413.3 Z" fill="#F2C9A5"/>
+    <circle cx="268" cy="340" r="25" fill="#F2C9A5"/>
+    <circle cx="218" cy="430" r="25" fill="#F2C9A5"/>
+    <circle cx="272" cy="490" r="25" fill="#F2C9A5"/>
+    <path d="M243.5 326.4 L212.5 382.2 L261.5 409.4 L292.5 353.6 Z" fill="#A9576A"/>
+    <circle cx="268" cy="340" r="28" fill="#A9576A"/>
+    <circle cx="237" cy="395.8" r="28" fill="#A9576A"/>
+    <circle cx="272" cy="490" r="30" fill="#F2C9A5"/>
+    <path d="M425 285 L425 245 L375 245 L375 285 Z" fill="#DDA884"/>
+    <circle cx="400" cy="285" r="25" fill="#DDA884"/>
+    <circle cx="400" cy="245" r="25" fill="#DDA884"/>
+    <g transform="rotate(0 400 300)">
+    <circle cx="282" cy="180" r="24" fill="#DDA884"/>
+    <circle cx="518" cy="180" r="24" fill="#DDA884"/>
+    <circle cx="400" cy="170" r="120" fill="#F2C9A5"/>
+    <path d="M282 160 Q282 0 400 0 Q518 0 518 160 Q470 95 400 100 Q330 95 282 160 Z" fill="#E3C26B"/>
+    <path d="M266 120 L266 360 L306 360 L306 120 Z" fill="#E3C26B"/>
+    <circle cx="286" cy="120" r="20" fill="#E3C26B"/>
+    <circle cx="286" cy="360" r="20" fill="#E3C26B"/>
+    <path d="M494 120 L494 360 L534 360 L534 120 Z" fill="#E3C26B"/>
+    <circle cx="514" cy="120" r="20" fill="#E3C26B"/>
+    <circle cx="514" cy="360" r="20" fill="#E3C26B"/>
+    <circle cx="358" cy="180" r="12" fill="#2A1E17"/>
+    <circle cx="442" cy="180" r="12" fill="#2A1E17"/>
+    <circle cx="335" cy="215" r="16" fill="#E9A48F"/>
+    <circle cx="465" cy="215" r="16" fill="#E9A48F"/>
+    <path d="M372 222 Q400 262 428 222 Q400 236 372 222 Z" fill="#2A1E17"/>
+    </g>
+  </g>
+</svg>

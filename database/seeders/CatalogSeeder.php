@@ -32,10 +32,31 @@ class CatalogSeeder extends Seeder
         'Béka' => 'frog',
     ];
 
+    // Állatonként 4 póz az alaphelyzet mellé (PRD US-23): fájlnév-utótag => cselekvés neve (ezt látja a szülő, és ez
+    // alapján választ mondatot a mesegyűjtemény). / 4 poses per animal next to the default (PRD US-23): file suffix =>
+    // action name (shown to the parent; the story collection picks sentences by it).
+    public const ANIMAL_POSES = [
+        'bear' => ['sit' => 'ül', 'run' => 'fut', 'sleep' => 'alszik', 'wave' => 'integet'],
+        'deer' => ['graze' => 'legel', 'run' => 'fut', 'sleep' => 'alszik', 'jump' => 'ugrik'],
+        'fox' => ['sit' => 'ül', 'run' => 'fut', 'sleep' => 'alszik', 'sniff' => 'szimatol'],
+        'dog' => ['sit' => 'ül', 'run' => 'fut', 'sleep' => 'alszik', 'paw' => 'pacsit ad'],
+        'lamb' => ['graze' => 'legel', 'run' => 'fut', 'sleep' => 'alszik', 'jump' => 'ugrál'],
+        'cat' => ['sit' => 'ül', 'run' => 'fut', 'sleep' => 'alszik', 'wash' => 'mosakszik'],
+        'rabbit' => ['eat' => 'répát eszik', 'run' => 'fut', 'sleep' => 'alszik', 'jump' => 'ugrik'],
+        'hedgehog' => ['run' => 'fut', 'sleep' => 'alszik', 'curl' => 'összegömbölyödik', 'apple' => 'almát visz'],
+        'mouse' => ['run' => 'fut', 'sleep' => 'alszik', 'cheese' => 'sajtot eszik', 'rear' => 'ágaskodik'],
+        'frog' => ['jump' => 'ugrik', 'sleep' => 'alszik', 'croak' => 'brekeg', 'wave' => 'integet'],
+    ];
+
+    // A gyerekfigura 4 pózza mind a 8 változatnál (BR-06: alaphelyzet + 4). / The child figure's 4 poses (BR-06).
+    public const CHILD_POSES = ['wave' => 'integet', 'run' => 'szalad', 'sit' => 'ül', 'sleep' => 'alszik'];
+
     public const BACKGROUNDS = [
         'Éjszakai erdő' => 'backgrounds/forest-night.svg',
         'Napos rét' => 'backgrounds/meadow-day.svg',
         'Esti hálószoba' => 'backgrounds/bedroom-evening.svg',
+        // A téli mesékhez (PRD 1.6 US-24) / for the winter stories
+        'Havas táj' => 'backgrounds/snowy-day.svg',
     ];
 
     private const GENDER_NAMES = ['girl' => 'Lány', 'boy' => 'Fiú'];
@@ -52,6 +73,7 @@ class CatalogSeeder extends Seeder
                 ['gender' => null, 'hair_color' => null]
             );
             $this->defaultAction($character, "actions/{$slug}-default.svg");
+            $this->poses($character, $slug, self::ANIMAL_POSES[$slug]);
         }
 
         foreach (Character::GENDERS as $gender) {
@@ -61,6 +83,7 @@ class CatalogSeeder extends Seeder
                     ['gender' => $gender, 'hair_color' => $hair]
                 );
                 $this->defaultAction($character, "actions/child-{$gender}-{$hair}-default.svg");
+                $this->poses($character, "child-{$gender}-{$hair}", self::CHILD_POSES);
             }
         }
 
@@ -69,10 +92,10 @@ class CatalogSeeder extends Seeder
         }
     }
 
-    // A repóban lévő képeket ugyanazzal a relatív úttal tölti fel az images tárolóra, így helyben és
-    // élesben (R2) is ugyanúgy érhetők el (Tech Stack 4.3).
-    // Uploads the images from the repo to the images disk with the same relative path, so they are
-    // reachable the same way locally and in production (R2) (Tech Stack 4.3).
+    // A repóban lévő képeket ugyanazzal a relatív úttal másolja az images tárolóra, így helyben és
+    // a szerveren is ugyanazon az úton érhetők el (Tech Stack 4.3).
+    // Copies the images from the repo to the images disk with the same relative path, so they are
+    // reachable the same way locally and on the server (Tech Stack 4.3).
     private function copyImages(): void
     {
         $source = database_path('seeders/images');
@@ -91,5 +114,17 @@ class CatalogSeeder extends Seeder
         $action->character_id = $character->id;
         $action->fill(['name' => 'áll', 'image_path' => $path, 'is_default' => true]);
         $action->save();
+    }
+
+    // További pózok; a kulcs szereplő + név, így újrafuttatáskor sem duplikálódnak (IP F1-13).
+    // Further poses; the key is character + name, so they are not duplicated when run again (IP F1-13).
+    private function poses(Character $character, string $prefix, array $poses): void
+    {
+        foreach ($poses as $suffix => $name) {
+            $action = Action::firstOrNew(['character_id' => $character->id, 'name' => $name, 'is_default' => false]);
+            $action->character_id = $character->id;
+            $action->fill(['image_path' => "actions/{$prefix}-{$suffix}.svg"]);
+            $action->save();
+        }
     }
 }

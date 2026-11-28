@@ -37,14 +37,18 @@ class GenerationTest extends TestCase
         return ['choices' => [['message' => ['content' => $content]]]];
     }
 
-    public function test_guest_can_generate_a_story_with_the_demo_generator()
+    // Alapból a mesegyűjtemény fut, AI-hívás nélkül (PRD US-24). / By default the story collection runs, no AI call.
+    public function test_guest_can_generate_a_story_from_the_story_collection_without_ai()
     {
+        Http::fake();
+
         $this->generateStory()->assertRedirect(route('stories.result', ['page' => 0]));
 
         $draft = session(StoryDraftService::KEY);
         $this->assertSame(StoryDraftService::STATUS_GENERATED, $draft['status']);
         $this->assertCount(8, $draft['generated']['pages']);
-        $this->assertNotSame('', $draft['generated']['title']);
+        $this->assertStringContainsString('Panni', $draft['generated']['title'].implode(' ', $draft['generated']['pages']));
+        Http::assertNothingSent();
     }
 
     // US-21: a háttér nélküli és az üres oldalakat a generálás véletlenszerűen tölti ki, a szülő figurái maradnak.
@@ -63,16 +67,16 @@ class GenerationTest extends TestCase
             $this->assertNotNull($page['background_id'], "page $n");
             $this->assertNotEmpty($page['placements'], "page $n");
         }
+        // A szülő 1. oldalon elhelyezett figurái nem változtak. / The parent's figures on page 1 stayed unchanged.
+        $this->assertSame($this->figure->id, $draft['pages'][1]['placements'][0]['character_id']);
         $this->assertSame($this->fox->id, $draft['pages'][1]['placements'][1]['character_id']);
-        // Az első és az utolsó oldalon ott a gyerek. / The child is on the first and last page.
-        $this->assertSame($this->figure->id, $draft['pages'][7]['placements'][0]['character_id']);
     }
 
     public function test_surprise_story_fills_every_page_and_generates()
     {
         $this->post(route('stories.create.child.store'), $this->childData());
 
-        $this->post(route('stories.surprise'), ['context' => 'barátság', 'page_count' => 4])
+        $this->post(route('stories.surprise'), ['theme_id' => $this->theme->id, 'page_count' => 4])
             ->assertRedirect(route('stories.result', ['page' => 0]));
 
         $draft = session(StoryDraftService::KEY);
@@ -80,7 +84,8 @@ class GenerationTest extends TestCase
         $this->assertCount(4, $draft['generated']['pages']);
         foreach ($draft['pages'] as $page) {
             $this->assertNotNull($page['background_id']);
-            $this->assertLessThanOrEqual(config('story.random.animals_max') + 1, count($page['placements']));
+            // Gyerek + társ (+ mellékszereplő), a jelenet szerint. / Child + companion (+ extra), per the scene.
+            $this->assertLessThanOrEqual(3, count($page['placements']));
         }
     }
 
@@ -88,8 +93,20 @@ class GenerationTest extends TestCase
     {
         $this->post(route('stories.create.child.store'), $this->childData());
 
-        $this->post(route('stories.surprise'), ['context' => '', 'page_count' => 3])
-            ->assertSessionHasErrors(['context', 'page_count']);
+        $this->post(route('stories.surprise'), ['page_count' => 3])
+            ->assertSessionHasErrors('page_count')
+            ->assertSessionDoesntHaveErrors('theme_id');
+    }
+
+    // A „Meglepetés mese” téma nélkül is indul: a rendszer választ témát (US-21, US-24).
+    // "Surprise story" also starts without a theme: the system picks one (US-21, US-24).
+    public function test_surprise_story_picks_a_theme_when_none_is_chosen()
+    {
+        $this->post(route('stories.create.child.store'), $this->childData());
+
+        $this->post(route('stories.surprise'), ['page_count' => 5])->assertRedirect(route('stories.result', ['page' => 0]));
+
+        $this->assertNotNull(session(StoryDraftService::KEY)['settings']['theme_id']);
     }
 
     public function test_valid_ai_answer_is_used()

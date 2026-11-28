@@ -5,7 +5,7 @@
 return [
     'title' => 'Esti mese a gyerekednek',
     'cta' => 'Mese készítése',
-    'lead' => 'Készíts képes esti mesét, amelynek a gyereked a főszereplője. Te állítod össze az oldalakat, a szöveget a mesterséges intelligencia írja meg.',
+    'lead' => 'Készíts képes esti mesét, amelynek a gyereked a főszereplője. Te állítod össze az oldalakat, a szöveget pedig a mesegyűjteményünkből készítjük el, minden alkalommal kicsit másképp.',
 
     // A három lépés rövid felirata (CG 6.9: ikon + rövid felirat) / Short labels of the three steps
     'steps' => [

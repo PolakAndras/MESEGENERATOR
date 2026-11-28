@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Lány – fekete – ül · gyerekfigura: alaphelyzetben 800 px magas, talppont alul középen -->
+  <g transform="translate(0 0) scale(1.0000)">
+    <g transform="rotate(0 400 410)">
+    <path d="M262 280 Q262 210 400 210 Q538 210 538 280 L538 500 Q538 530 508 530 L292 530 Q262 530 262 500 Z" fill="#1F1C1D"/>
+    </g>
+    <path d="M351.4 627.9 L286.4 667.9 L313.6 712.1 L378.6 672.1 Z" fill="#DDA884"/>
+    <path d="M278 703.9 L330 785.9 L374 758.1 L322 676.1 Z" fill="#DDA884"/>
+    <circle cx="365" cy="650" r="26" fill="#DDA884"/>
+    <circle cx="300" cy="690" r="26" fill="#DDA884"/>
+    <circle cx="352" cy="772" r="26" fill="#DDA884"/>
+    <ellipse cx="344" cy="778" rx="46" ry="22" fill="#5A4235"/>
+    <path d="M421.4 672.1 L486.4 712.1 L513.6 667.9 L448.6 627.9 Z" fill="#DDA884"/>
+    <path d="M478 676.1 L426 758.1 L470 785.9 L522 703.9 Z" fill="#DDA884"/>
+    <circle cx="435" cy="650" r="26" fill="#DDA884"/>
+    <circle cx="500" cy="690" r="26" fill="#DDA884"/>
+    <circle cx="448" cy="772" r="26" fill="#DDA884"/>
+    <ellipse cx="456" cy="778" rx="46" ry="22" fill="#5A4235"/>
+    <path d="M244.1 442.8 L238.1 462.8 L285.9 477.2 L291.9 457.2 Z" fill="#F2C9A5"/>
+    <path d="M238.4 478.3 L298.4 648.3 L345.6 631.7 L285.6 461.7 Z" fill="#F2C9A5"/>
+    <circle cx="268" cy="450" r="25" fill="#F2C9A5"/>
+    <circle cx="262" cy="470" r="25" fill="#F2C9A5"/>
+    <circle cx="322" cy="640" r="25" fill="#F2C9A5"/>
+    <path d="M241.2 442 L237.5 454.4 L291.1 470.4 L294.8 458 Z" fill="#A9576A"/>
+    <circle cx="268" cy="450" r="28" fill="#A9576A"/>
+    <circle cx="264.3" cy="462.4" r="28" fill="#A9576A"/>
+    <circle cx="322" cy="640" r="30" fill="#F2C9A5"/>
+    <path d="M508.1 457.2 L514.1 477.2 L561.9 462.8 L555.9 442.8 Z" fill="#F2C9A5"/>
+    <path d="M514.4 461.7 L454.4 631.7 L501.6 648.3 L561.6 478.3 Z" fill="#F2C9A5"/>
+    <circle cx="532" cy="450" r="25" fill="#F2C9A5"/>
+    <circle cx="538" cy="470" r="25" fill="#F2C9A5"/>
+    <circle cx="478" cy="640" r="25" fill="#F2C9A5"/>
+    <path d="M505.2 458 L508.9 470.4 L562.5 454.4 L558.8 442 Z" fill="#A9576A"/>
+    <circle cx="532" cy="450" r="28" fill="#A9576A"/>
+    <circle cx="535.7" cy="462.4" r="28" fill="#A9576A"/>
+    <circle cx="478" cy="640" r="30" fill="#F2C9A5"/>
+    <path d="M330 410 H470 Q490 410 495 440 L540 640 Q545 670 515 670 H285 Q255 670 260 640 L305 440 Q310 410 330 410 Z" fill="#C76B7A"/>
+    <circle cx="268" cy="450" r="30" fill="#A9576A"/>
+    <circle cx="532" cy="450" r="30" fill="#A9576A"/>
+    <circle cx="322" cy="640" r="30" fill="#F2C9A5"/>
+    <circle cx="478" cy="640" r="30" fill="#F2C9A5"/>
+    <path d="M425 395 L425 355 L375 355 L375 395 Z" fill="#DDA884"/>
+    <circle cx="400" cy="395" r="25" fill="#DDA884"/>
+    <circle cx="400" cy="355" r="25" fill="#DDA884"/>
+    <g transform="rotate(0 400 410)">
+    <circle cx="282" cy="290" r="24" fill="#DDA884"/>
+    <circle cx="518" cy="290" r="24" fill="#DDA884"/>
+    <circle cx="400" cy="280" r="120" fill="#F2C9A5"/>
+    <path d="M282 270 Q282 110 400 110 Q518 110 518 270 Q470 205 400 210 Q330 205 282 270 Z" fill="#2E2A2B"/>
+    <path d="M266 230 L266 470 L306 470 L306 230 Z" fill="#2E2A2B"/>
+    <circle cx="286" cy="230" r="20" fill="#2E2A2B"/>
+    <circle cx="286" cy="470" r="20" fill="#2E2A2B"/>
+    <path d="M494 230 L494 470 L534 470 L534 230 Z" fill="#2E2A2B"/>
+    <circle cx="514" cy="230" r="20" fill="#2E2A2B"/>
+    <circle cx="514" cy="470" r="20" fill="#2E2A2B"/>
+    <circle cx="358" cy="290" r="12" fill="#2A1E17"/>
+    <circle cx="442" cy="290" r="12" fill="#2A1E17"/>
+    <circle cx="335" cy="325" r="16" fill="#E9A48F"/>
+    <circle cx="465" cy="325" r="16" fill="#E9A48F"/>
+    <path d="M372 332 Q400 360 428 332 Q400 346 372 332 Z" fill="#2A1E17"/>
+    </g>
+  </g>
+</svg>

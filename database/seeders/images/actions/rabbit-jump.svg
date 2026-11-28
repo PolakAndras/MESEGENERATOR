@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Nyúl – ugrik · S méretosztály: alaphelyzetben 360 px magas, talppont alul középen -->
+  <g transform="translate(35.9 58) scale(0.9045)">
+    <circle cx="257.5" cy="614.9" r="28" fill="#F3EFE8"/>
+    <ellipse cx="400" cy="650" rx="150" ry="78" fill="#C9C3B8" transform="rotate(-24 400 650)"/>
+    <path d="M330.3 685 L255.3 732.5 L276.7 766.3 L351.7 718.8 Z" fill="#C9C3B8"/>
+    <path d="M255.3 732.5 L180.3 780 L201.7 813.8 L276.7 766.3 Z" fill="#C9C3B8"/>
+    <circle cx="341" cy="701.9" r="20" fill="#C9C3B8"/>
+    <circle cx="266" cy="749.4" r="20" fill="#C9C3B8"/>
+    <circle cx="191" cy="796.9" r="20" fill="#C9C3B8"/>
+    <ellipse cx="176" cy="798.9" rx="45" ry="16" fill="#A8A196" transform="rotate(20 176 798.9)"/>
+    <path d="M479.5 652.4 L589.5 722.4 L603.5 700.4 L493.5 630.4 Z" fill="#C9C3B8"/>
+    <circle cx="486.5" cy="641.4" r="13" fill="#C9C3B8"/>
+    <circle cx="596.5" cy="711.4" r="13" fill="#C9C3B8"/>
+    <ellipse cx="604.5" cy="711.4" rx="22" ry="13" fill="#A8A196"/>
+    <path d="M461.4 631.8 L525.8 556 L472.4 510.6 L408 586.5 Z" fill="#C9C3B8"/>
+    <circle cx="434.7" cy="609.2" r="35" fill="#C9C3B8"/>
+    <circle cx="499.1" cy="533.3" r="35" fill="#C9C3B8"/>
+    <g transform="rotate(55 499.1 533.3)">
+    <ellipse cx="481.1" cy="424.3" rx="34" ry="88" fill="#A8A196"/>
+    <ellipse cx="481.1" cy="430.3" rx="15.3" ry="64" fill="#E4A9A0"/>
+    <ellipse cx="513.1" cy="424.3" rx="36" ry="88" fill="#C9C3B8"/>
+    <ellipse cx="513.1" cy="430.3" rx="16.2" ry="64" fill="#E4A9A0"/>
+    </g>
+    <circle cx="499.1" cy="533.3" r="62" fill="#C9C3B8"/>
+    <ellipse cx="533.2" cy="555" rx="24.8" ry="18.6" fill="#F3EFE8"/>
+    <ellipse cx="554.9" cy="545.7" rx="8.1" ry="6.2" fill="#E4A9A0"/>
+    <circle cx="520.8" cy="524" r="8.1" fill="#2A1E17"/>
+  </g>
+</svg>

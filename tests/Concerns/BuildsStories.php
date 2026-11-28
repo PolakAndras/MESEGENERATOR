@@ -4,6 +4,8 @@ namespace Tests\Concerns;
 
 use App\Models\Background;
 use App\Models\Character;
+use App\Models\StoryTheme;
+use Database\Seeders\StoryTemplateSeeder;
 use Illuminate\Support\Facades\Storage;
 
 /**
@@ -22,6 +24,8 @@ trait BuildsStories
 
     protected Background $forest;
 
+    protected StoryTheme $theme;
+
     protected function makeCatalog(): void
     {
         Storage::fake('images');
@@ -29,6 +33,11 @@ trait BuildsStories
         $this->fox = Character::factory()->animal()->create(['name' => 'Róka']);
         $this->rabbit = Character::factory()->animal()->create(['name' => 'Nyúl']);
         $this->forest = Background::factory()->create(['name' => 'Éjszakai erdő']);
+
+        // A valódi mesegyűjtemény (PRD US-24), hogy a tesztek a tényleges témákkal és mondatokkal fussanak.
+        // The real story collection (PRD US-24), so tests run with the actual themes and sentences.
+        $this->seed(StoryTemplateSeeder::class);
+        $this->theme = StoryTheme::where('slug', 'baratsag')->firstOrFail();
     }
 
     protected function childData(array $overrides = []): array
@@ -57,7 +66,7 @@ trait BuildsStories
     protected function completeSteps(int $pageCount = 8): void
     {
         $this->post(route('stories.create.child.store'), $this->childData());
-        $this->post(route('stories.create.settings.store'), ['context' => 'barátság', 'page_count' => $pageCount]);
+        $this->post(route('stories.create.settings.store'), ['theme_id' => $this->theme->id, 'page_count' => $pageCount]);
     }
 
     protected function fillAllPages(int $pageCount = 8): void
@@ -67,7 +76,7 @@ trait BuildsStories
         }
     }
 
-    // A teljes vendég-folyamat a generálásig (demo generátorral). / The whole guest flow up to generation (demo generator).
+    // A teljes vendég-folyamat a generálásig (a mesegyűjteménnyel). / The whole guest flow up to generation (story collection).
     protected function generateStory(int $pageCount = 8)
     {
         $this->completeSteps($pageCount);

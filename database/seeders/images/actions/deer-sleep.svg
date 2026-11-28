@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <!-- Szarvas – alszik · L méretosztály: alaphelyzetben 680 px magas, talppont alul középen -->
+  <g transform="translate(-91.3 -83.8) scale(1.0993)">
+    <path d="M504.2 780.4 L673.7 784 L674.3 755.2 L504.8 751.7 Z" fill="#8E6340"/>
+    <circle cx="504.5" cy="766.1" r="14.4" fill="#8E6340"/>
+    <circle cx="674" cy="769.6" r="14.4" fill="#8E6340"/>
+    <ellipse cx="681" cy="768" rx="19.8" ry="12.2" fill="#5A3E2A"/>
+    <ellipse cx="210" cy="680.6" rx="14.7" ry="29.4" fill="#8E6340" transform="rotate(20 210 680.6)"/>
+    <ellipse cx="213.8" cy="685.2" rx="8.3" ry="18.4" fill="#E3C9A3" transform="rotate(20 213.8 685.2)"/>
+    <ellipse cx="400" cy="724.6" rx="190" ry="75.4" fill="#B9865A"/>
+    <circle cx="305" cy="698.2" r="8.3" fill="#E3C9A3"/>
+    <circle cx="371.5" cy="686.8" r="8.3" fill="#E3C9A3"/>
+    <circle cx="438" cy="690.6" r="8.3" fill="#E3C9A3"/>
+    <circle cx="343" cy="720.8" r="8.3" fill="#E3C9A3"/>
+    <circle cx="409.5" cy="713.2" r="8.3" fill="#E3C9A3"/>
+    <ellipse cx="428.5" cy="758.5" rx="117.8" ry="28.7" fill="#E3C9A3"/>
+    <ellipse cx="305" cy="747.2" rx="68.3" ry="49.7" fill="#B9865A"/>
+    <path d="M305 799.2 L373.3 799.2 L373.3 772 L305 772 Z" fill="#B9865A"/>
+    <circle cx="305" cy="785.6" r="13.6" fill="#B9865A"/>
+    <circle cx="373.3" cy="785.6" r="13.6" fill="#B9865A"/>
+    <ellipse cx="380.4" cy="786" rx="19.8" ry="12.2" fill="#5A3E2A"/>
+    <path d="M493 780.3 L630.5 799.9 L634.5 771.3 L497 751.8 Z" fill="#B9865A"/>
+    <circle cx="495" cy="766.1" r="14.4" fill="#B9865A"/>
+    <circle cx="632.5" cy="785.6" r="14.4" fill="#B9865A"/>
+    <ellipse cx="639.5" cy="786" rx="19.8" ry="12.2" fill="#5A3E2A"/>
+    <path d="M491.6 750.5 L548.6 727.9 L525 668.4 L468 691 Z" fill="#B9865A"/>
+    <path d="M516.9 723.2 L580.2 773.5 L620 723.4 L556.7 673.1 Z" fill="#B9865A"/>
+    <circle cx="479.8" cy="720.8" r="32" fill="#B9865A"/>
+    <circle cx="536.8" cy="698.2" r="32" fill="#B9865A"/>
+    <circle cx="600.1" cy="748.5" r="32" fill="#B9865A"/>
+    <g transform="rotate(8 600.1 748.5)">
+    <path d="M584.9 708.3 L573.7 657.9 L564.9 659.9 L576.1 710.3 Z" fill="#7A5A3E"/>
+    <path d="M573.1 656.5 L553.5 625.7 L545.9 630.5 L565.5 661.3 Z" fill="#7A5A3E"/>
+    <circle cx="580.5" cy="709.3" r="4.5" fill="#7A5A3E"/>
+    <circle cx="569.3" cy="658.9" r="4.5" fill="#7A5A3E"/>
+    <circle cx="549.7" cy="628.1" r="4.5" fill="#7A5A3E"/>
+    <path d="M570.1 655 L542.1 649.4 L540.5 657.1 L568.5 662.7 Z" fill="#7A5A3E"/>
+    <circle cx="569.3" cy="658.9" r="3.9" fill="#7A5A3E"/>
+    <circle cx="541.3" cy="653.3" r="3.9" fill="#7A5A3E"/>
+    <path d="M612.9 710.3 L624.1 659.9 L615.3 657.9 L604.1 708.3 Z" fill="#7A5A3E"/>
+    <path d="M623.5 661.3 L643.1 630.5 L635.5 625.7 L615.9 656.5 Z" fill="#7A5A3E"/>
+    <circle cx="608.5" cy="709.3" r="4.5" fill="#7A5A3E"/>
+    <circle cx="619.7" cy="658.9" r="4.5" fill="#7A5A3E"/>
+    <circle cx="639.3" cy="628.1" r="4.5" fill="#7A5A3E"/>
+    <path d="M620.5 662.7 L648.5 657.1 L646.9 649.4 L618.9 655 Z" fill="#7A5A3E"/>
+    <circle cx="619.7" cy="658.9" r="3.9" fill="#7A5A3E"/>
+    <circle cx="647.7" cy="653.3" r="3.9" fill="#7A5A3E"/>
+    <ellipse cx="552.5" cy="728.9" rx="30.8" ry="14" fill="#8E6340" transform="rotate(-25 552.5 728.9)"/>
+    <ellipse cx="552.5" cy="728.9" rx="16.8" ry="6.7" fill="#E3C9A3" transform="rotate(-25 552.5 728.9)"/>
+    <circle cx="600.1" cy="748.5" r="56" fill="#B9865A"/>
+    <ellipse cx="642.1" cy="766.4" rx="34.7" ry="23.5" fill="#B9865A"/>
+    <ellipse cx="653.3" cy="773.7" rx="22.4" ry="14" fill="#E3C9A3"/>
+    <ellipse cx="672.9" cy="765.3" rx="7.8" ry="6.2" fill="#2A1E17"/>
+    <path d="M607.8 740.1 Q616.9 749.2 626 740.1 Q616.9 744.2 607.8 740.1 Z" fill="#2A1E17"/>
+    </g>
+    <path d="M616.9 630.9 L647.7 630.9 L647.7 637.7 L627.4 654.9 L647.7 654.9 L647.7 661.7 L616.9 661.7 L616.9 654.9 L637.2 637.7 L616.9 637.7 Z" fill="#8FA7C4"/>
+    <path d="M652.3 590.8 L674.5 590.8 L674.5 595.7 L659.9 608.1 L674.5 608.1 L674.5 613 L652.3 613 L652.3 608.1 L667 595.7 L652.3 595.7 Z" fill="#8FA7C4"/>
+  </g>
+</svg>

@@ -23,9 +23,12 @@ class StoryGenerationService
 {
     private StoryTextGenerator $generator;
 
-    public function __construct(StoryTextGenerator $generator)
+    private StoryPlanner $planner;
+
+    public function __construct(StoryTextGenerator $generator, StoryPlanner $planner)
     {
         $this->generator = $generator;
+        $this->planner = $planner;
     }
 
     /**
@@ -62,6 +65,7 @@ class StoryGenerationService
     public function input(StoryDraftService $drafts): array
     {
         $child = $drafts->child();
+        $plan = $this->planner->plan($drafts);
         $backgrounds = Background::pluck('name', 'id');
         $characters = Character::all()->keyBy('id');
         $actions = Action::pluck('name', 'id');
@@ -92,6 +96,13 @@ class StoryGenerationService
                 'gender' => $child['gender'] === 'girl' ? 'lány' : 'fiú',
             ],
             'context' => $drafts->settings()['context'],
+            // A mesegyűjteménynek (PRD 1.6 US-24): a téma és a mese terve (cselekmény, oldalankénti jelenet, állattárs),
+            // ugyanaz, amiből a véletlen képek készültek. / For the story collection: the theme and the story plan
+            // (plot, scene per page, animal companion), the same the random pictures were built from.
+            'theme_id' => $drafts->settings()['theme_id'],
+            'plot' => $plan['plot'],
+            'steps' => $plan['steps'],
+            'companion' => optional(Character::find($plan['companion_id']))->name,
             'pages' => $pages,
         ];
     }

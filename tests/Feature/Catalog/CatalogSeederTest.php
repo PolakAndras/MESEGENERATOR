@@ -25,8 +25,8 @@ class CatalogSeederTest extends TestCase
 
         $this->assertSame(10, Character::where('type', Character::TYPE_ANIMAL)->count());
         $this->assertSame(8, Character::where('type', Character::TYPE_CHILD_FIGURE)->count());
-        $this->assertSame(18, Action::count());
-        $this->assertSame(3, Background::count());
+        $this->assertSame(90, Action::count());  // 18 alaphelyzet + 72 póz / 18 defaults + 72 poses
+        $this->assertSame(4, Background::count());
     }
 
     public function test_every_character_has_exactly_one_default_action()

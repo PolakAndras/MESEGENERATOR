@@ -2,12 +2,15 @@
 
 namespace App\Http\Requests;
 
+use App\Models\StoryTheme;
 use App\Support\StoryLimits;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * Varázsló 2. lépés (Backend Schema 8.3, PRD US-02). A kontextus hosszát a szerver is ellenőrzi (US-02 AC3).
- * Wizard step 2 (Backend Schema 8.3, PRD US-02). The server checks the context length too (US-02 AC3).
+ * Varázsló 2. lépés (PRD 1.6 US-02, US-24): a mese témája a 15 közül és az oldalszám.
+ * A „Meglepetés mese” (stories.surprise) téma nélkül is indulhat: ilyenkor a rendszer választ témát.
+ * Wizard step 2 (PRD 1.6 US-02, US-24): the story theme out of 15 and the page count.
+ * "Surprise story" (stories.surprise) may start without a theme: the system picks one then.
  */
 class SettingsStepRequest extends FormRequest
 {
@@ -21,9 +24,14 @@ class SettingsStepRequest extends FormRequest
         $limits = StoryLimits::current();
 
         return [
-            'context' => ['required', 'string', 'max:'.config('story.context_max')],
+            'theme_id' => [$this->routeIs('stories.surprise') ? 'nullable' : 'required', 'integer', 'exists:story_themes,id'],
             'page_count' => ['required', 'integer', 'between:'.$limits['pages_min'].','.$limits['pages_max']],
             'confirm_reduce' => ['nullable', 'boolean'],
         ];
+    }
+
+    public function theme(): StoryTheme
+    {
+        return StoryTheme::find($this->input('theme_id')) ?? StoryTheme::inRandomOrder()->firstOrFail();
     }
 }

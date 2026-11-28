@@ -7,6 +7,7 @@ use App\Http\Requests\PageStepRequest;
 use App\Http\Requests\SettingsStepRequest;
 use App\Models\Background;
 use App\Models\Character;
+use App\Models\StoryTheme;
 use App\Services\StoryDraftService;
 use App\Services\StoryRandomizer;
 use App\Support\CanvasState;
@@ -101,7 +102,7 @@ class StoryWizardController extends Controller
         return view('stories.create.settings', [
             'settings' => $this->drafts->settings(),
             'pageOptions' => range($limits['pages_min'], $limits['pages_max']),
-            'contextMax' => config('story.context_max'),
+            'themes' => StoryTheme::orderBy('sort')->pluck('name', 'id'),
         ]);
     }
 
@@ -123,7 +124,7 @@ class StoryWizardController extends Controller
         }
 
         $hadPages = $this->drafts->get()['last_step'] === 'page';
-        $this->drafts->saveSettings($request->input('context'), $pageCount);
+        $this->drafts->saveSettings($request->theme(), $pageCount);
 
         $page = $hadPages ? ($this->drafts->get()['last_page'] ?? 1) : 1;
 
@@ -157,10 +158,11 @@ class StoryWizardController extends Controller
 
         $this->drafts->savePage($page, $request->validated());
 
-        // „Véletlen oldal” (PRD US-21): az aktuális oldal tartalmát véletlenszerűre cseréli, és ugyanoda tér vissza.
-        // "Random page" (PRD US-21): replaces the current page with random content and returns to the same page.
+        // „Véletlen oldal” (PRD 1.6 US-21): az aktuális oldalt a mese tervében hozzá tartozó jelenet képére cseréli,
+        // és ugyanoda tér vissza. / "Random page" (PRD 1.6 US-21): replaces the current page with the picture of its
+        // scene in the story plan and returns to the same page.
         if ($request->input('target') === 'random') {
-            $this->drafts->putPage($page, $randomizer->page($this->drafts->child()['character_id']));
+            $this->drafts->putPage($page, $randomizer->page($this->drafts, $page));
 
             return redirect()->route('stories.create.page', ['page' => $page])
                 ->with('flash', ['type' => 'info', 'message' => __('wizard.pages.randomized')]);

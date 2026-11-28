@@ -1,13 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
-  <!-- Nyúl – áll · S méretosztály: 360 px magas, talppont alul középen -->
-  <circle cx="275" cy="690" r="36" fill="#F3EFE8"/>
-  <ellipse cx="380" cy="700" rx="120" ry="95" fill="#C9C3B8"/>
-  <ellipse cx="420" cy="780" rx="60" ry="20" fill="#A8A196"/>
-  <ellipse cx="320" cy="782" rx="50" ry="18" fill="#A8A196"/>
-  <ellipse cx="455" cy="502" rx="22" ry="58" fill="#A8A196" transform="rotate(-10 455 502)"/>
-  <ellipse cx="500" cy="500" rx="22" ry="58" fill="#C9C3B8" transform="rotate(12 500 500)"/>
-  <circle cx="480" cy="590" r="68" fill="#C9C3B8"/>
-  <ellipse cx="535" cy="612" rx="22" ry="18" fill="#F3EFE8"/>
-  <circle cx="552" cy="604" r="8" fill="#2A1E17"/>
-  <circle cx="505" cy="575" r="9" fill="#2A1E17"/>
+  <!-- Nyúl – áll · S méretosztály: alaphelyzetben 360 px magas, talppont alul középen -->
+  <g transform="translate(25.3 75.5) scale(0.9045)">
+    <circle cx="289.6" cy="670" r="30" fill="#F3EFE8"/>
+    <ellipse cx="400" cy="695" rx="120" ry="100" fill="#C9C3B8" transform="rotate(-12 400 695)"/>
+    <ellipse cx="364" cy="738" rx="70" ry="58" fill="#C9C3B8"/>
+    <ellipse cx="394" cy="784" rx="62" ry="17" fill="#A8A196"/>
+    <path d="M453.7 719.3 L477.7 788.3 L502.3 779.7 L478.3 710.7 Z" fill="#C9C3B8"/>
+    <circle cx="466" cy="715" r="13" fill="#C9C3B8"/>
+    <circle cx="490" cy="784" r="13" fill="#C9C3B8"/>
+    <ellipse cx="498.4" cy="786" rx="22" ry="13" fill="#A8A196"/>
+    <path d="M460.2 687.7 L528.5 626 L481.5 574 L413.3 635.8 Z" fill="#C9C3B8"/>
+    <circle cx="436.8" cy="661.8" r="35" fill="#C9C3B8"/>
+    <circle cx="505" cy="600" r="35" fill="#C9C3B8"/>
+    <g transform="rotate(-8 505 600)">
+    <ellipse cx="487" cy="491" rx="34" ry="88" fill="#A8A196"/>
+    <ellipse cx="487" cy="497" rx="15.3" ry="64" fill="#E4A9A0"/>
+    <ellipse cx="519" cy="491" rx="36" ry="88" fill="#C9C3B8"/>
+    <ellipse cx="519" cy="497" rx="16.2" ry="64" fill="#E4A9A0"/>
+    </g>
+    <circle cx="505" cy="600" r="62" fill="#C9C3B8"/>
+    <ellipse cx="539.1" cy="621.7" rx="24.8" ry="18.6" fill="#F3EFE8"/>
+    <ellipse cx="560.8" cy="612.4" rx="8.1" ry="6.2" fill="#E4A9A0"/>
+    <circle cx="526.7" cy="590.7" r="8.1" fill="#2A1E17"/>
+  </g>
 </svg>

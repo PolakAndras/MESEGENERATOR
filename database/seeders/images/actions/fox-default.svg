@@ -1,17 +1,54 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
-  <!-- Róka – áll · M méretosztály: 520 px magas, talppont alul középen -->
-  <rect x="300" y="670" width="36" height="130" rx="16" fill="#B5601F"/>
-  <rect x="500" y="670" width="36" height="130" rx="16" fill="#B5601F"/>
-  <ellipse cx="215" cy="580" rx="95" ry="48" fill="#D9792F" transform="rotate(-25 215 580)"/>
-  <ellipse cx="150" cy="610" rx="34" ry="28" fill="#F3E9DC"/>
-  <ellipse cx="380" cy="615" rx="170" ry="88" fill="#D9792F"/>
-  <ellipse cx="420" cy="660" rx="100" ry="34" fill="#F3E9DC"/>
-  <rect x="250" y="675" width="36" height="125" rx="16" fill="#D9792F"/>
-  <rect x="450" y="675" width="36" height="125" rx="16" fill="#D9792F"/>
-  <path d="M505 410 Q520 300 535 290 Q560 330 568 392 Z" fill="#B5601F"/>
-  <path d="M568 392 Q590 290 605 280 Q628 330 630 405 Z" fill="#B5601F"/>
-  <circle cx="555" cy="455" r="82" fill="#D9792F"/>
-  <ellipse cx="628" cy="480" rx="46" ry="28" fill="#F3E9DC"/>
-  <circle cx="668" cy="474" r="11" fill="#2A1E17"/>
-  <circle cx="588" cy="440" r="10" fill="#2A1E17"/>
+  <!-- Róka – áll · M méretosztály: alaphelyzetben 520 px magas, talppont alul középen -->
+  <g transform="translate(-155.1 -258.3) scale(1.2969)">
+    <path d="M335.9 646.5 L321.9 721.8 L353.4 727.6 L367.4 652.3 Z" fill="#B5601F"/>
+    <path d="M321.9 727.6 L335.9 802.9 L367.4 797.1 L353.4 721.8 Z" fill="#B5601F"/>
+    <circle cx="351.6" cy="649.4" r="16" fill="#B5601F"/>
+    <circle cx="337.6" cy="724.7" r="16" fill="#B5601F"/>
+    <circle cx="351.6" cy="800" r="16" fill="#B5601F"/>
+    <ellipse cx="358.7" cy="798.4" rx="19.8" ry="12.2" fill="#5A3A26"/>
+    <path d="M477.2 650.3 L481.4 725.6 L513.3 723.8 L509.1 648.5 Z" fill="#B5601F"/>
+    <path d="M481.4 723.8 L477.2 799.1 L509.1 800.9 L513.3 725.6 Z" fill="#B5601F"/>
+    <circle cx="493.2" cy="649.4" r="16" fill="#B5601F"/>
+    <circle cx="497.4" cy="724.7" r="16" fill="#B5601F"/>
+    <circle cx="493.2" cy="800" r="16" fill="#B5601F"/>
+    <ellipse cx="500.2" cy="798.4" rx="19.8" ry="12.2" fill="#5A3A26"/>
+    <g transform="rotate(52 292.6 623.7)">
+    <ellipse cx="237.7" cy="623.7" rx="61" ry="26.4" fill="#D9792F"/>
+    <ellipse cx="192.6" cy="623.7" rx="20.7" ry="17.8" fill="#F3E9DC"/>
+    </g>
+    <ellipse cx="400" cy="630.3" rx="122" ry="66" fill="#D9792F"/>
+    <ellipse cx="418.3" cy="660" rx="75.6" ry="25.1" fill="#F3E9DC"/>
+    <path d="M313.5 650.4 L299.5 723.7 L331 729.7 L345 656.4 Z" fill="#D9792F"/>
+    <path d="M299.5 729.7 L313.5 803 L345 797 L331 723.7 Z" fill="#D9792F"/>
+    <circle cx="329.2" cy="653.4" r="16" fill="#D9792F"/>
+    <circle cx="315.2" cy="726.7" r="16" fill="#D9792F"/>
+    <circle cx="329.2" cy="800" r="16" fill="#D9792F"/>
+    <ellipse cx="336.3" cy="798.4" rx="19.8" ry="12.2" fill="#5A3A26"/>
+    <path d="M454.8 654.3 L459 727.6 L490.9 725.8 L486.7 652.5 Z" fill="#D9792F"/>
+    <path d="M459 725.8 L454.8 799.1 L486.7 800.9 L490.9 727.6 Z" fill="#D9792F"/>
+    <circle cx="470.8" cy="653.4" r="16" fill="#D9792F"/>
+    <circle cx="475" cy="726.7" r="16" fill="#D9792F"/>
+    <circle cx="470.8" cy="800" r="16" fill="#D9792F"/>
+    <ellipse cx="477.8" cy="798.4" rx="19.8" ry="12.2" fill="#5A3A26"/>
+    <path d="M470.2 651.5 L504.4 625.1 L466.4 576.1 L432.3 602.5 Z" fill="#D9792F"/>
+    <path d="M513.3 614.2 L548.3 542.3 L492.6 515.1 L457.5 587 Z" fill="#D9792F"/>
+    <circle cx="451.2" cy="627" r="31" fill="#D9792F"/>
+    <circle cx="485.4" cy="600.6" r="31" fill="#D9792F"/>
+    <circle cx="520.5" cy="528.7" r="31" fill="#D9792F"/>
+    <g transform="rotate(0 520.5 528.7)">
+    <g transform="rotate(-12 487.5 492.4)">
+    <path d="M462.7 492.4 Q477.6 446.2 487.5 426.4 Q497.4 446.2 512.2 492.4 Z" fill="#B5601F"/>
+    <path d="M475.1 492.4 Q482.5 463.8 487.5 451.5 Q492.4 463.8 499.8 492.4 Z" fill="#F3E9DC"/>
+    </g>
+    <g transform="rotate(10 530.4 485.8)">
+    <path d="M505.6 485.8 Q520.5 439.6 530.4 419.8 Q540.3 439.6 555.1 485.8 Z" fill="#D9792F"/>
+    <path d="M518 485.8 Q525.4 457.2 530.4 444.9 Q535.3 457.2 542.7 485.8 Z" fill="#F3E9DC"/>
+    </g>
+    <circle cx="520.5" cy="528.7" r="66" fill="#D9792F"/>
+    <path d="M527.1 525.4 Q606.3 528.7 636 551.8 Q593.1 591.4 513.9 578.2 Z" fill="#F3E9DC"/>
+    <ellipse cx="632.7" cy="549.8" rx="11.2" ry="8.6" fill="#2A1E17"/>
+    <circle cx="550.2" cy="516.8" r="7.3" fill="#2A1E17"/>
+    </g>
+  </g>
 </svg>
